@@ -1,0 +1,3984 @@
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"vexuser.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.vexUserSetup,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.weak	vexUserSetup
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	vexUserSetup, %function
+  25              	vexUserSetup:
+  26              	.LFB63:
+  27              		.file 1 "vexuser.c"
+  28              		.loc 1 103 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 104 0
+  33 0000 40F20000 		movw	r0, #:lower16:.LANCHOR0
+  34 0004 0C21     		movs	r1, #12
+  35              		.loc 1 103 0
+  36 0006 08B5     		push	{r3, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 3, -8
+  40              		.cfi_offset 14, -4
+  41              		.loc 1 104 0
+  42 0008 C0F20000 		movt	r0, #:upper16:.LANCHOR0
+  43 000c FFF7FEFF 		bl	vexDigitalConfigure
+  44              	.LVL0:
+  45              		.loc 1 105 0
+  46 0010 40F20000 		movw	r0, #:lower16:.LANCHOR1
+  47 0014 C0F20000 		movt	r0, #:upper16:.LANCHOR1
+  48 0018 0A21     		movs	r1, #10
+  49              		.loc 1 106 0
+  50 001a BDE80840 		pop	{r3, lr}
+  51              		.loc 1 105 0
+  52 001e FFF7FEBF 		b	vexMotorConfigure
+  53              	.LVL1:
+  54              		.cfi_endproc
+  55              	.LFE63:
+  56              		.size	vexUserSetup, .-vexUserSetup
+  57 0022 00BFAFF3 		.section	.text.vexUserInit,"ax",%progbits
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 2
+
+
+  57      0080AFF3 
+  57      0080AFF3 
+  57      0080
+  58              		.align	2
+  59              		.p2align 4,,15
+  60              		.weak	vexUserInit
+  61              		.thumb
+  62              		.thumb_func
+  63              		.type	vexUserInit, %function
+  64              	vexUserInit:
+  65              	.LFB64:
+  66              		.loc 1 118 0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70              		@ link register save eliminated.
+  71 0000 7047     		bx	lr
+  72              		.cfi_endproc
+  73              	.LFE64:
+  74              		.size	vexUserInit, .-vexUserInit
+  75 0002 00BFAFF3 		.section	.text.vexAutonomous,"ax",%progbits
+  75      0080AFF3 
+  75      0080AFF3 
+  75      0080
+  76              		.align	2
+  77              		.p2align 4,,15
+  78              		.global	vexAutonomous
+  79              		.thumb
+  80              		.thumb_func
+  81              		.type	vexAutonomous, %function
+  82              	vexAutonomous:
+  83              	.LFB65:
+  84              		.loc 1 130 0
+  85              		.cfi_startproc
+  86              		@ Volatile: function does not return.
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89              	.LVL2:
+  90              		.loc 1 130 0
+  91 0000 08B5     		push	{r3, lr}
+  92              	.LCFI1:
+  93              		.cfi_def_cfa_offset 8
+  94              		.cfi_offset 3, -8
+  95              		.cfi_offset 14, -4
+  96              		.loc 1 134 0
+  97 0002 0348     		ldr	r0, .L6
+  98              	.LVL3:
+  99 0004 FFF7FEFF 		bl	vexTaskRegister
+ 100              	.LVL4:
+ 101              	.L4:
+ 102              		.loc 1 139 0 discriminator 1
+ 103 0008 1920     		movs	r0, #25
+ 104 000a FFF7FEFF 		bl	vexSleep
+ 105              	.LVL5:
+ 106 000e FBE7     		b	.L4
+ 107              	.L7:
+ 108              		.align	2
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 3
+
+
+ 109              	.L6:
+ 110 0010 00000000 		.word	.LC0
+ 111              		.cfi_endproc
+ 112              	.LFE65:
+ 113              		.size	vexAutonomous, .-vexAutonomous
+ 114 0014 AFF30080 		.section	.text.vexOperator,"ax",%progbits
+ 114      AFF30080 
+ 114      AFF30080 
+ 115              		.align	2
+ 116              		.p2align 4,,15
+ 117              		.global	vexOperator
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	vexOperator, %function
+ 121              	vexOperator:
+ 122              	.LFB66:
+ 123              		.loc 1 156 0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              	.LVL6:
+ 128 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 129              	.LCFI2:
+ 130              		.cfi_def_cfa_offset 32
+ 131              		.cfi_offset 3, -32
+ 132              		.cfi_offset 4, -28
+ 133              		.cfi_offset 5, -24
+ 134              		.cfi_offset 6, -20
+ 135              		.cfi_offset 7, -16
+ 136              		.cfi_offset 8, -12
+ 137              		.cfi_offset 9, -8
+ 138              		.cfi_offset 14, -4
+ 139              		.loc 1 166 0
+ 140 0004 DFF87081 		ldr	r8, .L20+4
+ 141              		.loc 1 161 0
+ 142 0008 5A48     		ldr	r0, .L20
+ 143              	.LVL7:
+ 144 000a FFF7FEFF 		bl	vexTaskRegister
+ 145              	.LVL8:
+ 146              		.loc 1 166 0
+ 147 000e D8F81830 		ldr	r3, [r8, #24]
+ 148 0012 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 149 0014 03F00403 		and	r3, r3, #4
+ 150 0018 DBB2     		uxtb	r3, r3
+ 151 001a 002B     		cmp	r3, #0
+ 152 001c 40F0A680 		bne	.L15
+ 153              	.LBB2:
+ 154              		.loc 1 182 0
+ 155 0020 C146     		mov	r9, r8
+ 156 0022 74E0     		b	.L16
+ 157              	.LVL9:
+ 158              	.L19:
+ 159              		.loc 1 186 0
+ 160 0024 0F20     		movs	r0, #15
+ 161 0026 FFF7FEFF 		bl	vexControllerGet
+ 162              	.LVL10:
+ 163 002a 0546     		mov	r5, r0
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 4
+
+
+ 164 002c 0E20     		movs	r0, #14
+ 165 002e FFF7FEFF 		bl	vexControllerGet
+ 166              	.LVL11:
+ 167 0032 05EB8505 		add	r5, r5, r5, lsl #2
+ 168 0036 00EB8010 		add	r0, r0, r0, lsl #6
+ 169 003a 05EB0515 		add	r5, r5, r5, lsl #4
+ 170 003e 4119     		adds	r1, r0, r5
+ 171 0040 09B2     		sxth	r1, r1
+ 172 0042 0220     		movs	r0, #2
+ 173 0044 FFF7FEFF 		bl	vexMotorSet
+ 174              	.LVL12:
+ 175              		.loc 1 187 0
+ 176 0048 0F20     		movs	r0, #15
+ 177 004a FFF7FEFF 		bl	vexControllerGet
+ 178              	.LVL13:
+ 179 004e 0546     		mov	r5, r0
+ 180 0050 0E20     		movs	r0, #14
+ 181 0052 FFF7FEFF 		bl	vexControllerGet
+ 182              	.LVL14:
+ 183 0056 05EB8505 		add	r5, r5, r5, lsl #2
+ 184 005a 00EB8010 		add	r0, r0, r0, lsl #6
+ 185 005e 05EB0515 		add	r5, r5, r5, lsl #4
+ 186 0062 4119     		adds	r1, r0, r5
+ 187 0064 09B2     		sxth	r1, r1
+ 188 0066 2046     		mov	r0, r4
+ 189 0068 FFF7FEFF 		bl	vexMotorSet
+ 190              	.LVL15:
+ 191              		.loc 1 189 0
+ 192 006c 0F20     		movs	r0, #15
+ 193 006e FFF7FEFF 		bl	vexControllerGet
+ 194              	.LVL16:
+ 195 0072 0446     		mov	r4, r0
+ 196 0074 0E20     		movs	r0, #14
+ 197 0076 FFF7FEFF 		bl	vexControllerGet
+ 198              	.LVL17:
+ 199 007a 04EB8404 		add	r4, r4, r4, lsl #2
+ 200 007e 00EB8010 		add	r0, r0, r0, lsl #6
+ 201 0082 04EB0414 		add	r4, r4, r4, lsl #4
+ 202 0086 0119     		adds	r1, r0, r4
+ 203 0088 09B2     		sxth	r1, r1
+ 204 008a 0720     		movs	r0, #7
+ 205 008c FFF7FEFF 		bl	vexMotorSet
+ 206              	.LVL18:
+ 207              		.loc 1 190 0
+ 208 0090 0F20     		movs	r0, #15
+ 209 0092 FFF7FEFF 		bl	vexControllerGet
+ 210              	.LVL19:
+ 211 0096 0446     		mov	r4, r0
+ 212 0098 0E20     		movs	r0, #14
+ 213 009a FFF7FEFF 		bl	vexControllerGet
+ 214              	.LVL20:
+ 215 009e 04EB8404 		add	r4, r4, r4, lsl #2
+ 216 00a2 00EB8010 		add	r0, r0, r0, lsl #6
+ 217 00a6 04EB0414 		add	r4, r4, r4, lsl #4
+ 218 00aa 0119     		adds	r1, r0, r4
+ 219 00ac 09B2     		sxth	r1, r1
+ 220 00ae 0920     		movs	r0, #9
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 5
+
+
+ 221 00b0 FFF7FEFF 		bl	vexMotorSet
+ 222              	.LVL21:
+ 223              		.loc 1 193 0
+ 224 00b4 0D20     		movs	r0, #13
+ 225 00b6 FFF7FEFF 		bl	vexControllerGet
+ 226              	.LVL22:
+ 227 00ba 0446     		mov	r4, r0
+ 228 00bc 0C20     		movs	r0, #12
+ 229 00be FFF7FEFF 		bl	vexControllerGet
+ 230              	.LVL23:
+ 231 00c2 C4EBC414 		rsb	r4, r4, r4, lsl #7
+ 232 00c6 A0EBC010 		sub	r0, r0, r0, lsl #7
+ 233 00ca 0119     		adds	r1, r0, r4
+ 234 00cc 09B2     		sxth	r1, r1
+ 235 00ce 0520     		movs	r0, #5
+ 236 00d0 FFF7FEFF 		bl	vexMotorSet
+ 237              	.LVL24:
+ 238              		.loc 1 196 0
+ 239 00d4 0B20     		movs	r0, #11
+ 240 00d6 FFF7FEFF 		bl	vexControllerGet
+ 241              	.LVL25:
+ 242 00da 00EB8000 		add	r0, r0, r0, lsl #2
+ 243 00de 00EB0011 		add	r1, r0, r0, lsl #4
+ 244 00e2 09B2     		sxth	r1, r1
+ 245 00e4 0420     		movs	r0, #4
+ 246 00e6 FFF7FEFF 		bl	vexMotorSet
+ 247              	.LVL26:
+ 248              		.loc 1 199 0
+ 249 00ea 0920     		movs	r0, #9
+ 250 00ec 0121     		movs	r1, #1
+ 251 00ee FFF7FEFF 		bl	vexDigitalModeSet
+ 252              	.LVL27:
+ 253              		.loc 1 200 0
+ 254 00f2 0A20     		movs	r0, #10
+ 255 00f4 0121     		movs	r1, #1
+ 256 00f6 FFF7FEFF 		bl	vexDigitalModeSet
+ 257              	.LVL28:
+ 258              		.loc 1 206 0
+ 259 00fa 1920     		movs	r0, #25
+ 260 00fc FFF7FEFF 		bl	vexSleep
+ 261              	.LVL29:
+ 262              	.LBE2:
+ 263              		.loc 1 166 0
+ 264 0100 D9F81830 		ldr	r3, [r9, #24]
+ 265 0104 5B7F     		ldrb	r3, [r3, #29]	@ zero_extendqisi2
+ 266 0106 03F00403 		and	r3, r3, #4
+ 267 010a DBB2     		uxtb	r3, r3
+ 268 010c 73BB     		cbnz	r3, .L15
+ 269              	.L16:
+ 270              	.LBB3:
+ 271              		.loc 1 171 0
+ 272 010e 0320     		movs	r0, #3
+ 273 0110 FFF7FEFF 		bl	vexControllerGet
+ 274              	.LVL30:
+ 275 0114 0546     		mov	r5, r0
+ 276              	.LVL31:
+ 277              		.loc 1 172 0
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 6
+
+
+ 278 0116 0220     		movs	r0, #2
+ 279              	.LVL32:
+ 280 0118 FFF7FEFF 		bl	vexControllerGet
+ 281              	.LVL33:
+ 282 011c 0646     		mov	r6, r0
+ 283              	.LVL34:
+ 284              		.loc 1 173 0
+ 285 011e 0020     		movs	r0, #0
+ 286              	.LVL35:
+ 287 0120 FFF7FEFF 		bl	vexControllerGet
+ 288              	.LVL36:
+ 289              		.loc 1 176 0
+ 290 0124 B6B2     		uxth	r6, r6
+ 291              	.LVL37:
+ 292 0126 ADB2     		uxth	r5, r5
+ 293              	.LVL38:
+ 294 0128 AF19     		adds	r7, r5, r6
+ 295 012a 84B2     		uxth	r4, r0
+ 296 012c BFB2     		uxth	r7, r7
+ 297 012e 3919     		adds	r1, r7, r4
+ 298 0130 0320     		movs	r0, #3
+ 299              	.LVL39:
+ 300 0132 09B2     		sxth	r1, r1
+ 301 0134 FFF7FEFF 		bl	vexMotorSet
+ 302              	.LVL40:
+ 303              		.loc 1 177 0
+ 304 0138 6119     		adds	r1, r4, r5
+ 305 013a 891B     		subs	r1, r1, r6
+ 306 013c 0120     		movs	r0, #1
+ 307 013e 09B2     		sxth	r1, r1
+ 308              		.loc 1 178 0
+ 309 0140 A619     		adds	r6, r4, r6
+ 310              		.loc 1 177 0
+ 311 0142 FFF7FEFF 		bl	vexMotorSet
+ 312              	.LVL41:
+ 313              		.loc 1 178 0
+ 314 0146 711B     		subs	r1, r6, r5
+ 315 0148 0820     		movs	r0, #8
+ 316 014a 09B2     		sxth	r1, r1
+ 317 014c FFF7FEFF 		bl	vexMotorSet
+ 318              	.LVL42:
+ 319              		.loc 1 179 0
+ 320 0150 E11B     		subs	r1, r4, r7
+ 321 0152 0620     		movs	r0, #6
+ 322 0154 09B2     		sxth	r1, r1
+ 323 0156 FFF7FEFF 		bl	vexMotorSet
+ 324              	.LVL43:
+ 325              		.loc 1 182 0
+ 326 015a D8F81830 		ldr	r3, [r8, #24]
+ 327 015e 5C7F     		ldrb	r4, [r3, #29]	@ zero_extendqisi2
+ 328              	.LVL44:
+ 329 0160 04F00404 		and	r4, r4, #4
+ 330 0164 E4B2     		uxtb	r4, r4
+ 331 0166 002C     		cmp	r4, #0
+ 332 0168 3FF45CAF 		beq	.L19
+ 333              	.L15:
+ 334              	.LBE3:
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 7
+
+
+ 335              		.loc 1 210 0
+ 336 016c 0020     		movs	r0, #0
+ 337 016e BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 338              	.L21:
+ 339 0172 00BF     		.align	2
+ 340              	.L20:
+ 341 0174 08000000 		.word	.LC1
+ 342 0178 00000000 		.word	rlist
+ 343              		.cfi_endproc
+ 344              	.LFE66:
+ 345              		.size	vexOperator, .-vexOperator
+ 346 017c AFF30080 		.section	.rodata.str1.4,"aMS",%progbits,1
+ 347              		.align	2
+ 348              	.LC0:
+ 349 0000 6175746F 		.ascii	"auton\000"
+ 349      6E00
+ 350 0006 0000     		.space	2
+ 351              	.LC1:
+ 352 0008 6F706572 		.ascii	"operator\000"
+ 352      61746F72 
+ 352      00
+ 353 0011 000000   		.section	.data.mConfig,"aw",%progbits
+ 354              		.align	2
+ 355              		.set	.LANCHOR1,. + 0
+ 356              		.type	mConfig, %object
+ 357              		.size	mConfig, 60
+ 358              	mConfig:
+ 359 0000 00       		.byte	0
+ 360 0001 03       		.byte	3
+ 361 0002 01       		.byte	1
+ 362 0003 06       		.byte	6
+ 363 0004 0000     		.short	0
+ 364 0006 01       		.byte	1
+ 365 0007 02       		.byte	2
+ 366 0008 00       		.byte	0
+ 367 0009 00       		.byte	0
+ 368 000a 0000     		.short	0
+ 369 000c 02       		.byte	2
+ 370 000d 03       		.byte	3
+ 371 000e 00       		.byte	0
+ 372 000f 00       		.byte	0
+ 373 0010 0000     		.short	0
+ 374 0012 03       		.byte	3
+ 375 0013 02       		.byte	2
+ 376 0014 00       		.byte	0
+ 377 0015 00       		.byte	0
+ 378 0016 0000     		.short	0
+ 379 0018 04       		.byte	4
+ 380 0019 02       		.byte	2
+ 381 001a 01       		.byte	1
+ 382 001b 00       		.byte	0
+ 383 001c 0000     		.short	0
+ 384 001e 05       		.byte	5
+ 385 001f 02       		.byte	2
+ 386 0020 00       		.byte	0
+ 387 0021 00       		.byte	0
+ 388 0022 0000     		.short	0
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 8
+
+
+ 389 0024 06       		.byte	6
+ 390 0025 02       		.byte	2
+ 391 0026 00       		.byte	0
+ 392 0027 00       		.byte	0
+ 393 0028 0000     		.short	0
+ 394 002a 07       		.byte	7
+ 395 002b 03       		.byte	3
+ 396 002c 00       		.byte	0
+ 397 002d 00       		.byte	0
+ 398 002e 0000     		.short	0
+ 399 0030 08       		.byte	8
+ 400 0031 02       		.byte	2
+ 401 0032 00       		.byte	0
+ 402 0033 00       		.byte	0
+ 403 0034 0000     		.short	0
+ 404 0036 09       		.byte	9
+ 405 0037 03       		.byte	3
+ 406 0038 00       		.byte	0
+ 407 0039 06       		.byte	6
+ 408 003a 0100     		.short	1
+ 409              		.section	.data.dConfig,"aw",%progbits
+ 410              		.align	2
+ 411              		.set	.LANCHOR0,. + 0
+ 412              		.type	dConfig, %object
+ 413              		.size	dConfig, 72
+ 414              	dConfig:
+ 415 0000 00       		.byte	0
+ 416 0001 02       		.byte	2
+ 417 0002 01       		.byte	1
+ 418 0003 00       		.space	1
+ 419 0004 0000     		.short	0
+ 420 0006 01       		.byte	1
+ 421 0007 02       		.byte	2
+ 422 0008 01       		.byte	1
+ 423 0009 00       		.space	1
+ 424 000a 0000     		.short	0
+ 425 000c 02       		.byte	2
+ 426 000d 01       		.byte	1
+ 427 000e 00       		.byte	0
+ 428 000f 00       		.space	1
+ 429 0010 0000     		.short	0
+ 430 0012 03       		.byte	3
+ 431 0013 01       		.byte	1
+ 432 0014 00       		.byte	0
+ 433 0015 00       		.space	1
+ 434 0016 0000     		.short	0
+ 435 0018 04       		.byte	4
+ 436 0019 01       		.byte	1
+ 437 001a 00       		.byte	0
+ 438 001b 00       		.space	1
+ 439 001c 0000     		.short	0
+ 440 001e 05       		.byte	5
+ 441 001f 01       		.byte	1
+ 442 0020 00       		.byte	0
+ 443 0021 00       		.space	1
+ 444 0022 0000     		.short	0
+ 445 0024 06       		.byte	6
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 9
+
+
+ 446 0025 01       		.byte	1
+ 447 0026 00       		.byte	0
+ 448 0027 00       		.space	1
+ 449 0028 0000     		.short	0
+ 450 002a 07       		.byte	7
+ 451 002b 01       		.byte	1
+ 452 002c 00       		.byte	0
+ 453 002d 00       		.space	1
+ 454 002e 0000     		.short	0
+ 455 0030 08       		.byte	8
+ 456 0031 01       		.byte	1
+ 457 0032 00       		.byte	0
+ 458 0033 00       		.space	1
+ 459 0034 0000     		.short	0
+ 460 0036 09       		.byte	9
+ 461 0037 01       		.byte	1
+ 462 0038 00       		.byte	0
+ 463 0039 00       		.space	1
+ 464 003a 0000     		.short	0
+ 465 003c 0A       		.byte	10
+ 466 003d 01       		.byte	1
+ 467 003e 00       		.byte	0
+ 468 003f 00       		.space	1
+ 469 0040 0000     		.short	0
+ 470 0042 0B       		.byte	11
+ 471 0043 01       		.byte	1
+ 472 0044 00       		.byte	0
+ 473 0045 00       		.space	1
+ 474 0046 0000     		.short	0
+ 475              		.text
+ 476              	.Letext0:
+ 477              		.file 2 "c:/yagarto-20121222/lib/gcc/../../arm-none-eabi/sys-include/stdint.h"
+ 478              		.file 3 "../ChibiOS_2.6.2/os/ports/GCC/ARMCMx/chtypes.h"
+ 479              		.file 4 "../ChibiOS_2.6.2/os/kernel/include/chlists.h"
+ 480              		.file 5 "../ChibiOS_2.6.2/os/kernel/include/chthreads.h"
+ 481              		.file 6 "../ChibiOS_2.6.2/os/ports/GCC/ARMCMx/chcore_v7m.h"
+ 482              		.file 7 "../ChibiOS_2.6.2/os/kernel/include/chschd.h"
+ 483              		.file 8 "../ChibiOS_2.6.2/os/kernel/include/chmtx.h"
+ 484              		.file 9 "../convex/cortex/fw/vexdigital.h"
+ 485              		.file 10 "../convex/cortex/fw/vexmotor.h"
+ 486              		.file 11 "../convex/cortex/fw/vexime.h"
+ 487              		.file 12 "../convex/cortex/fw/vexconfig.h"
+ 488              		.file 13 "../convex/cortex/fw/vexctl.h"
+ 489              		.file 14 "../ChibiOS_2.6.2/os/ports/common/ARMCMx/CMSIS/include/core_cm3.h"
+ 490              		.file 15 "../convex/cortex/fw/vex.h"
+ 491              		.section	.debug_info,"",%progbits
+ 492              	.Ldebug_info0:
+ 493 0000 A20C0000 		.4byte	0xca2
+ 494 0004 0200     		.2byte	0x2
+ 495 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 496 000a 04       		.byte	0x4
+ 497 000b 01       		.uleb128 0x1
+ 498 000c 92040000 		.4byte	.LASF201
+ 499 0010 01       		.byte	0x1
+ 500 0011 4B020000 		.4byte	.LASF202
+ 501 0015 73010000 		.4byte	.LASF203
+ 502 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 10
+
+
+ 503 001d 00000000 		.4byte	0
+ 504 0021 00000000 		.4byte	0
+ 505 0025 00000000 		.4byte	.Ldebug_line0
+ 506 0029 02       		.uleb128 0x2
+ 507 002a 04       		.byte	0x4
+ 508 002b 07       		.byte	0x7
+ 509 002c 55020000 		.4byte	.LASF0
+ 510 0030 02       		.uleb128 0x2
+ 511 0031 01       		.byte	0x1
+ 512 0032 06       		.byte	0x6
+ 513 0033 F1000000 		.4byte	.LASF1
+ 514 0037 02       		.uleb128 0x2
+ 515 0038 01       		.byte	0x1
+ 516 0039 08       		.byte	0x8
+ 517 003a 4B050000 		.4byte	.LASF2
+ 518 003e 02       		.uleb128 0x2
+ 519 003f 02       		.byte	0x2
+ 520 0040 05       		.byte	0x5
+ 521 0041 8B050000 		.4byte	.LASF3
+ 522 0045 02       		.uleb128 0x2
+ 523 0046 02       		.byte	0x2
+ 524 0047 07       		.byte	0x7
+ 525 0048 0B030000 		.4byte	.LASF4
+ 526 004c 03       		.uleb128 0x3
+ 527 004d 04       		.byte	0x4
+ 528 004e 05       		.byte	0x5
+ 529 004f 696E7400 		.ascii	"int\000"
+ 530 0053 02       		.uleb128 0x2
+ 531 0054 08       		.byte	0x8
+ 532 0055 05       		.byte	0x5
+ 533 0056 E3000000 		.4byte	.LASF5
+ 534 005a 02       		.uleb128 0x2
+ 535 005b 08       		.byte	0x8
+ 536 005c 07       		.byte	0x7
+ 537 005d 0B010000 		.4byte	.LASF6
+ 538 0061 02       		.uleb128 0x2
+ 539 0062 04       		.byte	0x4
+ 540 0063 05       		.byte	0x5
+ 541 0064 3D010000 		.4byte	.LASF7
+ 542 0068 02       		.uleb128 0x2
+ 543 0069 04       		.byte	0x4
+ 544 006a 07       		.byte	0x7
+ 545 006b 2C040000 		.4byte	.LASF8
+ 546 006f 04       		.uleb128 0x4
+ 547 0070 04       		.byte	0x4
+ 548 0071 02       		.uleb128 0x2
+ 549 0072 04       		.byte	0x4
+ 550 0073 07       		.byte	0x7
+ 551 0074 31060000 		.4byte	.LASF9
+ 552 0078 05       		.uleb128 0x5
+ 553 0079 04       		.byte	0x4
+ 554 007a 7E000000 		.4byte	0x7e
+ 555 007e 02       		.uleb128 0x2
+ 556 007f 01       		.byte	0x1
+ 557 0080 08       		.byte	0x8
+ 558 0081 43060000 		.4byte	.LASF10
+ 559 0085 05       		.uleb128 0x5
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 11
+
+
+ 560 0086 04       		.byte	0x4
+ 561 0087 8B000000 		.4byte	0x8b
+ 562 008b 06       		.uleb128 0x6
+ 563 008c 7E000000 		.4byte	0x7e
+ 564 0090 07       		.uleb128 0x7
+ 565 0091 30080000 		.4byte	.LASF11
+ 566 0095 02       		.byte	0x2
+ 567 0096 2A       		.byte	0x2a
+ 568 0097 37000000 		.4byte	0x37
+ 569 009b 07       		.uleb128 0x7
+ 570 009c DB000000 		.4byte	.LASF12
+ 571 00a0 02       		.byte	0x2
+ 572 00a1 35       		.byte	0x35
+ 573 00a2 3E000000 		.4byte	0x3e
+ 574 00a6 07       		.uleb128 0x7
+ 575 00a7 87010000 		.4byte	.LASF13
+ 576 00ab 02       		.byte	0x2
+ 577 00ac 36       		.byte	0x36
+ 578 00ad 45000000 		.4byte	0x45
+ 579 00b1 07       		.uleb128 0x7
+ 580 00b2 43050000 		.4byte	.LASF14
+ 581 00b6 02       		.byte	0x2
+ 582 00b7 4F       		.byte	0x4f
+ 583 00b8 61000000 		.4byte	0x61
+ 584 00bc 07       		.uleb128 0x7
+ 585 00bd FE050000 		.4byte	.LASF15
+ 586 00c1 02       		.byte	0x2
+ 587 00c2 50       		.byte	0x50
+ 588 00c3 71000000 		.4byte	0x71
+ 589 00c7 07       		.uleb128 0x7
+ 590 00c8 CD000000 		.4byte	.LASF16
+ 591 00cc 03       		.byte	0x3
+ 592 00cd 2B       		.byte	0x2b
+ 593 00ce D2000000 		.4byte	0xd2
+ 594 00d2 02       		.uleb128 0x2
+ 595 00d3 01       		.byte	0x1
+ 596 00d4 02       		.byte	0x2
+ 597 00d5 3D050000 		.4byte	.LASF17
+ 598 00d9 07       		.uleb128 0x7
+ 599 00da CF050000 		.4byte	.LASF18
+ 600 00de 03       		.byte	0x3
+ 601 00df 2C       		.byte	0x2c
+ 602 00e0 90000000 		.4byte	0x90
+ 603 00e4 07       		.uleb128 0x7
+ 604 00e5 51010000 		.4byte	.LASF19
+ 605 00e9 03       		.byte	0x3
+ 606 00ea 2D       		.byte	0x2d
+ 607 00eb 90000000 		.4byte	0x90
+ 608 00ef 07       		.uleb128 0x7
+ 609 00f0 1A050000 		.4byte	.LASF20
+ 610 00f4 03       		.byte	0x3
+ 611 00f5 2E       		.byte	0x2e
+ 612 00f6 90000000 		.4byte	0x90
+ 613 00fa 07       		.uleb128 0x7
+ 614 00fb 33010000 		.4byte	.LASF21
+ 615 00ff 03       		.byte	0x3
+ 616 0100 2F       		.byte	0x2f
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 12
+
+
+ 617 0101 90000000 		.4byte	0x90
+ 618 0105 07       		.uleb128 0x7
+ 619 0106 2F050000 		.4byte	.LASF22
+ 620 010a 03       		.byte	0x3
+ 621 010b 30       		.byte	0x30
+ 622 010c BC000000 		.4byte	0xbc
+ 623 0110 07       		.uleb128 0x7
+ 624 0111 29050000 		.4byte	.LASF23
+ 625 0115 03       		.byte	0x3
+ 626 0116 31       		.byte	0x31
+ 627 0117 B1000000 		.4byte	0xb1
+ 628 011b 07       		.uleb128 0x7
+ 629 011c D8030000 		.4byte	.LASF24
+ 630 0120 03       		.byte	0x3
+ 631 0121 33       		.byte	0x33
+ 632 0122 BC000000 		.4byte	0xbc
+ 633 0126 07       		.uleb128 0x7
+ 634 0127 F6060000 		.4byte	.LASF25
+ 635 012b 03       		.byte	0x3
+ 636 012c 35       		.byte	0x35
+ 637 012d BC000000 		.4byte	0xbc
+ 638 0131 07       		.uleb128 0x7
+ 639 0132 0C020000 		.4byte	.LASF26
+ 640 0136 04       		.byte	0x4
+ 641 0137 2A       		.byte	0x2a
+ 642 0138 3C010000 		.4byte	0x13c
+ 643 013c 08       		.uleb128 0x8
+ 644 013d 0C020000 		.4byte	.LASF26
+ 645 0141 48       		.byte	0x48
+ 646 0142 05       		.byte	0x5
+ 647 0143 5E       		.byte	0x5e
+ 648 0144 61020000 		.4byte	0x261
+ 649 0148 09       		.uleb128 0x9
+ 650 0149 C8050000 		.4byte	.LASF27
+ 651 014d 05       		.byte	0x5
+ 652 014e 5F       		.byte	0x5f
+ 653 014f 86020000 		.4byte	0x286
+ 654 0153 02       		.byte	0x2
+ 655 0154 23       		.byte	0x23
+ 656 0155 00       		.uleb128 0
+ 657 0156 09       		.uleb128 0x9
+ 658 0157 22050000 		.4byte	.LASF28
+ 659 015b 05       		.byte	0x5
+ 660 015c 61       		.byte	0x61
+ 661 015d 86020000 		.4byte	0x286
+ 662 0161 02       		.byte	0x2
+ 663 0162 23       		.byte	0x23
+ 664 0163 04       		.uleb128 0x4
+ 665 0164 09       		.uleb128 0x9
+ 666 0165 D4000000 		.4byte	.LASF29
+ 667 0169 05       		.byte	0x5
+ 668 016a 63       		.byte	0x63
+ 669 016b 05010000 		.4byte	0x105
+ 670 016f 02       		.byte	0x2
+ 671 0170 23       		.byte	0x23
+ 672 0171 08       		.uleb128 0x8
+ 673 0172 09       		.uleb128 0x9
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 13
+
+
+ 674 0173 E2080000 		.4byte	.LASF30
+ 675 0177 05       		.byte	0x5
+ 676 0178 64       		.byte	0x64
+ 677 0179 52030000 		.4byte	0x352
+ 678 017d 02       		.byte	0x2
+ 679 017e 23       		.byte	0x23
+ 680 017f 0C       		.uleb128 0xc
+ 681 0180 09       		.uleb128 0x9
+ 682 0181 AD010000 		.4byte	.LASF31
+ 683 0185 05       		.byte	0x5
+ 684 0186 66       		.byte	0x66
+ 685 0187 86020000 		.4byte	0x286
+ 686 018b 02       		.byte	0x2
+ 687 018c 23       		.byte	0x23
+ 688 018d 10       		.uleb128 0x10
+ 689 018e 09       		.uleb128 0x9
+ 690 018f 5A040000 		.4byte	.LASF32
+ 691 0193 05       		.byte	0x5
+ 692 0194 67       		.byte	0x67
+ 693 0195 86020000 		.4byte	0x286
+ 694 0199 02       		.byte	0x2
+ 695 019a 23       		.byte	0x23
+ 696 019b 14       		.uleb128 0x14
+ 697 019c 09       		.uleb128 0x9
+ 698 019d 70080000 		.4byte	.LASF33
+ 699 01a1 05       		.byte	0x5
+ 700 01a2 6E       		.byte	0x6e
+ 701 01a3 85000000 		.4byte	0x85
+ 702 01a7 02       		.byte	0x2
+ 703 01a8 23       		.byte	0x23
+ 704 01a9 18       		.uleb128 0x18
+ 705 01aa 09       		.uleb128 0x9
+ 706 01ab 95050000 		.4byte	.LASF34
+ 707 01af 05       		.byte	0x5
+ 708 01b0 79       		.byte	0x79
+ 709 01b1 E4000000 		.4byte	0xe4
+ 710 01b5 02       		.byte	0x2
+ 711 01b6 23       		.byte	0x23
+ 712 01b7 1C       		.uleb128 0x1c
+ 713 01b8 09       		.uleb128 0x9
+ 714 01b9 D7050000 		.4byte	.LASF35
+ 715 01bd 05       		.byte	0x5
+ 716 01be 7D       		.byte	0x7d
+ 717 01bf D9000000 		.4byte	0xd9
+ 718 01c3 02       		.byte	0x2
+ 719 01c4 23       		.byte	0x23
+ 720 01c5 1D       		.uleb128 0x1d
+ 721 01c6 09       		.uleb128 0x9
+ 722 01c7 D4070000 		.4byte	.LASF36
+ 723 01cb 05       		.byte	0x5
+ 724 01cc 82       		.byte	0x82
+ 725 01cd EF000000 		.4byte	0xef
+ 726 01d1 02       		.byte	0x2
+ 727 01d2 23       		.byte	0x23
+ 728 01d3 1E       		.uleb128 0x1e
+ 729 01d4 09       		.uleb128 0x9
+ 730 01d5 9D050000 		.4byte	.LASF37
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 14
+
+
+ 731 01d9 05       		.byte	0x5
+ 732 01da 88       		.byte	0x88
+ 733 01db FA000000 		.4byte	0xfa
+ 734 01df 02       		.byte	0x2
+ 735 01e0 23       		.byte	0x23
+ 736 01e1 1F       		.uleb128 0x1f
+ 737 01e2 09       		.uleb128 0x9
+ 738 01e3 17000000 		.4byte	.LASF38
+ 739 01e7 05       		.byte	0x5
+ 740 01e8 8F       		.byte	0x8f
+ 741 01e9 75030000 		.4byte	0x375
+ 742 01ed 02       		.byte	0x2
+ 743 01ee 23       		.byte	0x23
+ 744 01ef 20       		.uleb128 0x20
+ 745 01f0 0A       		.uleb128 0xa
+ 746 01f1 705F7500 		.ascii	"p_u\000"
+ 747 01f5 05       		.byte	0x5
+ 748 01f6 B4       		.byte	0xb4
+ 749 01f7 2A040000 		.4byte	0x42a
+ 750 01fb 02       		.byte	0x2
+ 751 01fc 23       		.byte	0x23
+ 752 01fd 24       		.uleb128 0x24
+ 753 01fe 09       		.uleb128 0x9
+ 754 01ff E8080000 		.4byte	.LASF39
+ 755 0203 05       		.byte	0x5
+ 756 0204 B9       		.byte	0xb9
+ 757 0205 AE020000 		.4byte	0x2ae
+ 758 0209 02       		.byte	0x2
+ 759 020a 23       		.byte	0x23
+ 760 020b 28       		.uleb128 0x28
+ 761 020c 09       		.uleb128 0x9
+ 762 020d 97020000 		.4byte	.LASF40
+ 763 0211 05       		.byte	0x5
+ 764 0212 BF       		.byte	0xbf
+ 765 0213 8C020000 		.4byte	0x28c
+ 766 0217 02       		.byte	0x2
+ 767 0218 23       		.byte	0x23
+ 768 0219 2C       		.uleb128 0x2c
+ 769 021a 09       		.uleb128 0x9
+ 770 021b 59050000 		.4byte	.LASF41
+ 771 021f 05       		.byte	0x5
+ 772 0220 C3       		.byte	0xc3
+ 773 0221 10010000 		.4byte	0x110
+ 774 0225 02       		.byte	0x2
+ 775 0226 23       		.byte	0x23
+ 776 0227 34       		.uleb128 0x34
+ 777 0228 09       		.uleb128 0x9
+ 778 0229 F3050000 		.4byte	.LASF42
+ 779 022d 05       		.byte	0x5
+ 780 022e C9       		.byte	0xc9
+ 781 022f 1B010000 		.4byte	0x11b
+ 782 0233 02       		.byte	0x2
+ 783 0234 23       		.byte	0x23
+ 784 0235 38       		.uleb128 0x38
+ 785 0236 09       		.uleb128 0x9
+ 786 0237 81050000 		.4byte	.LASF43
+ 787 023b 05       		.byte	0x5
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 15
+
+
+ 788 023c D0       		.byte	0xd0
+ 789 023d 5F040000 		.4byte	0x45f
+ 790 0241 02       		.byte	0x2
+ 791 0242 23       		.byte	0x23
+ 792 0243 3C       		.uleb128 0x3c
+ 793 0244 09       		.uleb128 0x9
+ 794 0245 00070000 		.4byte	.LASF44
+ 795 0249 05       		.byte	0x5
+ 796 024a D4       		.byte	0xd4
+ 797 024b 05010000 		.4byte	0x105
+ 798 024f 02       		.byte	0x2
+ 799 0250 23       		.byte	0x23
+ 800 0251 40       		.uleb128 0x40
+ 801 0252 09       		.uleb128 0x9
+ 802 0253 03010000 		.4byte	.LASF45
+ 803 0257 05       		.byte	0x5
+ 804 0258 DA       		.byte	0xda
+ 805 0259 6F000000 		.4byte	0x6f
+ 806 025d 02       		.byte	0x2
+ 807 025e 23       		.byte	0x23
+ 808 025f 44       		.uleb128 0x44
+ 809 0260 00       		.byte	0
+ 810 0261 0B       		.uleb128 0xb
+ 811 0262 08       		.byte	0x8
+ 812 0263 04       		.byte	0x4
+ 813 0264 61       		.byte	0x61
+ 814 0265 86020000 		.4byte	0x286
+ 815 0269 09       		.uleb128 0x9
+ 816 026a C8050000 		.4byte	.LASF27
+ 817 026e 04       		.byte	0x4
+ 818 026f 62       		.byte	0x62
+ 819 0270 86020000 		.4byte	0x286
+ 820 0274 02       		.byte	0x2
+ 821 0275 23       		.byte	0x23
+ 822 0276 00       		.uleb128 0
+ 823 0277 09       		.uleb128 0x9
+ 824 0278 22050000 		.4byte	.LASF28
+ 825 027c 04       		.byte	0x4
+ 826 027d 64       		.byte	0x64
+ 827 027e 86020000 		.4byte	0x286
+ 828 0282 02       		.byte	0x2
+ 829 0283 23       		.byte	0x23
+ 830 0284 04       		.uleb128 0x4
+ 831 0285 00       		.byte	0
+ 832 0286 05       		.uleb128 0x5
+ 833 0287 04       		.byte	0x4
+ 834 0288 31010000 		.4byte	0x131
+ 835 028c 07       		.uleb128 0x7
+ 836 028d 79040000 		.4byte	.LASF46
+ 837 0291 04       		.byte	0x4
+ 838 0292 66       		.byte	0x66
+ 839 0293 61020000 		.4byte	0x261
+ 840 0297 0B       		.uleb128 0xb
+ 841 0298 04       		.byte	0x4
+ 842 0299 04       		.byte	0x4
+ 843 029a 6B       		.byte	0x6b
+ 844 029b AE020000 		.4byte	0x2ae
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 16
+
+
+ 845 029f 09       		.uleb128 0x9
+ 846 02a0 C8050000 		.4byte	.LASF27
+ 847 02a4 04       		.byte	0x4
+ 848 02a5 6D       		.byte	0x6d
+ 849 02a6 86020000 		.4byte	0x286
+ 850 02aa 02       		.byte	0x2
+ 851 02ab 23       		.byte	0x23
+ 852 02ac 00       		.uleb128 0
+ 853 02ad 00       		.byte	0
+ 854 02ae 07       		.uleb128 0x7
+ 855 02af CC030000 		.4byte	.LASF47
+ 856 02b3 04       		.byte	0x4
+ 857 02b4 70       		.byte	0x70
+ 858 02b5 97020000 		.4byte	0x297
+ 859 02b9 07       		.uleb128 0x7
+ 860 02ba DE010000 		.4byte	.LASF48
+ 861 02be 06       		.byte	0x6
+ 862 02bf E5       		.byte	0xe5
+ 863 02c0 6F000000 		.4byte	0x6f
+ 864 02c4 0C       		.uleb128 0xc
+ 865 02c5 84070000 		.4byte	.LASF49
+ 866 02c9 24       		.byte	0x24
+ 867 02ca 06       		.byte	0x6
+ 868 02cb 0C01     		.2byte	0x10c
+ 869 02cd 52030000 		.4byte	0x352
+ 870 02d1 0D       		.uleb128 0xd
+ 871 02d2 723400   		.ascii	"r4\000"
+ 872 02d5 06       		.byte	0x6
+ 873 02d6 1F01     		.2byte	0x11f
+ 874 02d8 B9020000 		.4byte	0x2b9
+ 875 02dc 02       		.byte	0x2
+ 876 02dd 23       		.byte	0x23
+ 877 02de 00       		.uleb128 0
+ 878 02df 0D       		.uleb128 0xd
+ 879 02e0 723500   		.ascii	"r5\000"
+ 880 02e3 06       		.byte	0x6
+ 881 02e4 2001     		.2byte	0x120
+ 882 02e6 B9020000 		.4byte	0x2b9
+ 883 02ea 02       		.byte	0x2
+ 884 02eb 23       		.byte	0x23
+ 885 02ec 04       		.uleb128 0x4
+ 886 02ed 0D       		.uleb128 0xd
+ 887 02ee 723600   		.ascii	"r6\000"
+ 888 02f1 06       		.byte	0x6
+ 889 02f2 2101     		.2byte	0x121
+ 890 02f4 B9020000 		.4byte	0x2b9
+ 891 02f8 02       		.byte	0x2
+ 892 02f9 23       		.byte	0x23
+ 893 02fa 08       		.uleb128 0x8
+ 894 02fb 0D       		.uleb128 0xd
+ 895 02fc 723700   		.ascii	"r7\000"
+ 896 02ff 06       		.byte	0x6
+ 897 0300 2201     		.2byte	0x122
+ 898 0302 B9020000 		.4byte	0x2b9
+ 899 0306 02       		.byte	0x2
+ 900 0307 23       		.byte	0x23
+ 901 0308 0C       		.uleb128 0xc
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 17
+
+
+ 902 0309 0D       		.uleb128 0xd
+ 903 030a 723800   		.ascii	"r8\000"
+ 904 030d 06       		.byte	0x6
+ 905 030e 2301     		.2byte	0x123
+ 906 0310 B9020000 		.4byte	0x2b9
+ 907 0314 02       		.byte	0x2
+ 908 0315 23       		.byte	0x23
+ 909 0316 10       		.uleb128 0x10
+ 910 0317 0D       		.uleb128 0xd
+ 911 0318 723900   		.ascii	"r9\000"
+ 912 031b 06       		.byte	0x6
+ 913 031c 2401     		.2byte	0x124
+ 914 031e B9020000 		.4byte	0x2b9
+ 915 0322 02       		.byte	0x2
+ 916 0323 23       		.byte	0x23
+ 917 0324 14       		.uleb128 0x14
+ 918 0325 0D       		.uleb128 0xd
+ 919 0326 72313000 		.ascii	"r10\000"
+ 920 032a 06       		.byte	0x6
+ 921 032b 2501     		.2byte	0x125
+ 922 032d B9020000 		.4byte	0x2b9
+ 923 0331 02       		.byte	0x2
+ 924 0332 23       		.byte	0x23
+ 925 0333 18       		.uleb128 0x18
+ 926 0334 0D       		.uleb128 0xd
+ 927 0335 72313100 		.ascii	"r11\000"
+ 928 0339 06       		.byte	0x6
+ 929 033a 2601     		.2byte	0x126
+ 930 033c B9020000 		.4byte	0x2b9
+ 931 0340 02       		.byte	0x2
+ 932 0341 23       		.byte	0x23
+ 933 0342 1C       		.uleb128 0x1c
+ 934 0343 0D       		.uleb128 0xd
+ 935 0344 6C7200   		.ascii	"lr\000"
+ 936 0347 06       		.byte	0x6
+ 937 0348 2701     		.2byte	0x127
+ 938 034a B9020000 		.4byte	0x2b9
+ 939 034e 02       		.byte	0x2
+ 940 034f 23       		.byte	0x23
+ 941 0350 20       		.uleb128 0x20
+ 942 0351 00       		.byte	0
+ 943 0352 0C       		.uleb128 0xc
+ 944 0353 54070000 		.4byte	.LASF50
+ 945 0357 04       		.byte	0x4
+ 946 0358 06       		.byte	0x6
+ 947 0359 3101     		.2byte	0x131
+ 948 035b 6F030000 		.4byte	0x36f
+ 949 035f 0D       		.uleb128 0xd
+ 950 0360 72313300 		.ascii	"r13\000"
+ 951 0364 06       		.byte	0x6
+ 952 0365 3201     		.2byte	0x132
+ 953 0367 6F030000 		.4byte	0x36f
+ 954 036b 02       		.byte	0x2
+ 955 036c 23       		.byte	0x23
+ 956 036d 00       		.uleb128 0
+ 957 036e 00       		.byte	0
+ 958 036f 05       		.uleb128 0x5
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 18
+
+
+ 959 0370 04       		.byte	0x4
+ 960 0371 C4020000 		.4byte	0x2c4
+ 961 0375 0E       		.uleb128 0xe
+ 962 0376 26010000 		.4byte	0x126
+ 963 037a 0B       		.uleb128 0xb
+ 964 037b 1C       		.byte	0x1c
+ 965 037c 07       		.byte	0x7
+ 966 037d 5E       		.byte	0x5e
+ 967 037e D7030000 		.4byte	0x3d7
+ 968 0382 09       		.uleb128 0x9
+ 969 0383 07060000 		.4byte	.LASF51
+ 970 0387 07       		.byte	0x7
+ 971 0388 5F       		.byte	0x5f
+ 972 0389 8C020000 		.4byte	0x28c
+ 973 038d 02       		.byte	0x2
+ 974 038e 23       		.byte	0x23
+ 975 038f 00       		.uleb128 0
+ 976 0390 09       		.uleb128 0x9
+ 977 0391 BA050000 		.4byte	.LASF52
+ 978 0395 07       		.byte	0x7
+ 979 0396 60       		.byte	0x60
+ 980 0397 05010000 		.4byte	0x105
+ 981 039b 02       		.byte	0x2
+ 982 039c 23       		.byte	0x23
+ 983 039d 08       		.uleb128 0x8
+ 984 039e 09       		.uleb128 0x9
+ 985 039f 73040000 		.4byte	.LASF53
+ 986 03a3 07       		.byte	0x7
+ 987 03a4 62       		.byte	0x62
+ 988 03a5 52030000 		.4byte	0x352
+ 989 03a9 02       		.byte	0x2
+ 990 03aa 23       		.byte	0x23
+ 991 03ab 0C       		.uleb128 0xc
+ 992 03ac 09       		.uleb128 0x9
+ 993 03ad CB010000 		.4byte	.LASF54
+ 994 03b1 07       		.byte	0x7
+ 995 03b2 65       		.byte	0x65
+ 996 03b3 86020000 		.4byte	0x286
+ 997 03b7 02       		.byte	0x2
+ 998 03b8 23       		.byte	0x23
+ 999 03b9 10       		.uleb128 0x10
+ 1000 03ba 09       		.uleb128 0x9
+ 1001 03bb A8040000 		.4byte	.LASF55
+ 1002 03bf 07       		.byte	0x7
+ 1003 03c0 66       		.byte	0x66
+ 1004 03c1 86020000 		.4byte	0x286
+ 1005 03c5 02       		.byte	0x2
+ 1006 03c6 23       		.byte	0x23
+ 1007 03c7 14       		.uleb128 0x14
+ 1008 03c8 09       		.uleb128 0x9
+ 1009 03c9 9E040000 		.4byte	.LASF56
+ 1010 03cd 07       		.byte	0x7
+ 1011 03ce 69       		.byte	0x69
+ 1012 03cf 86020000 		.4byte	0x286
+ 1013 03d3 02       		.byte	0x2
+ 1014 03d4 23       		.byte	0x23
+ 1015 03d5 18       		.uleb128 0x18
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 19
+
+
+ 1016 03d6 00       		.byte	0
+ 1017 03d7 07       		.uleb128 0x7
+ 1018 03d8 E5070000 		.4byte	.LASF57
+ 1019 03dc 07       		.byte	0x7
+ 1020 03dd 6B       		.byte	0x6b
+ 1021 03de 7A030000 		.4byte	0x37a
+ 1022 03e2 08       		.uleb128 0x8
+ 1023 03e3 4E040000 		.4byte	.LASF58
+ 1024 03e7 10       		.byte	0x10
+ 1025 03e8 08       		.byte	0x8
+ 1026 03e9 2C       		.byte	0x2c
+ 1027 03ea 19040000 		.4byte	0x419
+ 1028 03ee 09       		.uleb128 0x9
+ 1029 03ef 22010000 		.4byte	.LASF59
+ 1030 03f3 08       		.byte	0x8
+ 1031 03f4 2D       		.byte	0x2d
+ 1032 03f5 8C020000 		.4byte	0x28c
+ 1033 03f9 02       		.byte	0x2
+ 1034 03fa 23       		.byte	0x23
+ 1035 03fb 00       		.uleb128 0
+ 1036 03fc 09       		.uleb128 0x9
+ 1037 03fd C8080000 		.4byte	.LASF60
+ 1038 0401 08       		.byte	0x8
+ 1039 0402 2F       		.byte	0x2f
+ 1040 0403 86020000 		.4byte	0x286
+ 1041 0407 02       		.byte	0x2
+ 1042 0408 23       		.byte	0x23
+ 1043 0409 08       		.uleb128 0x8
+ 1044 040a 09       		.uleb128 0x9
+ 1045 040b EF060000 		.4byte	.LASF61
+ 1046 040f 08       		.byte	0x8
+ 1047 0410 31       		.byte	0x31
+ 1048 0411 19040000 		.4byte	0x419
+ 1049 0415 02       		.byte	0x2
+ 1050 0416 23       		.byte	0x23
+ 1051 0417 0C       		.uleb128 0xc
+ 1052 0418 00       		.byte	0
+ 1053 0419 05       		.uleb128 0x5
+ 1054 041a 04       		.byte	0x4
+ 1055 041b E2030000 		.4byte	0x3e2
+ 1056 041f 07       		.uleb128 0x7
+ 1057 0420 4E040000 		.4byte	.LASF58
+ 1058 0424 08       		.byte	0x8
+ 1059 0425 33       		.byte	0x33
+ 1060 0426 E2030000 		.4byte	0x3e2
+ 1061 042a 0F       		.uleb128 0xf
+ 1062 042b 04       		.byte	0x4
+ 1063 042c 05       		.byte	0x5
+ 1064 042d 96       		.byte	0x96
+ 1065 042e 5F040000 		.4byte	0x45f
+ 1066 0432 10       		.uleb128 0x10
+ 1067 0433 2B000000 		.4byte	.LASF62
+ 1068 0437 05       		.byte	0x5
+ 1069 0438 9D       		.byte	0x9d
+ 1070 0439 10010000 		.4byte	0x110
+ 1071 043d 10       		.uleb128 0x10
+ 1072 043e BB010000 		.4byte	.LASF63
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 20
+
+
+ 1073 0442 05       		.byte	0x5
+ 1074 0443 A4       		.byte	0xa4
+ 1075 0444 10010000 		.4byte	0x110
+ 1076 0448 10       		.uleb128 0x10
+ 1077 0449 69080000 		.4byte	.LASF64
+ 1078 044d 05       		.byte	0x5
+ 1079 044e AB       		.byte	0xab
+ 1080 044f 6F000000 		.4byte	0x6f
+ 1081 0453 10       		.uleb128 0x10
+ 1082 0454 C1050000 		.4byte	.LASF65
+ 1083 0458 05       		.byte	0x5
+ 1084 0459 B2       		.byte	0xb2
+ 1085 045a 1B010000 		.4byte	0x11b
+ 1086 045e 00       		.byte	0
+ 1087 045f 05       		.uleb128 0x5
+ 1088 0460 04       		.byte	0x4
+ 1089 0461 1F040000 		.4byte	0x41f
+ 1090 0465 0E       		.uleb128 0xe
+ 1091 0466 B1000000 		.4byte	0xb1
+ 1092 046a 11       		.uleb128 0x11
+ 1093 046b 01       		.byte	0x1
+ 1094 046c 09       		.byte	0x9
+ 1095 046d 8D       		.byte	0x8d
+ 1096 046e C7040000 		.4byte	0x4c7
+ 1097 0472 12       		.uleb128 0x12
+ 1098 0473 C3040000 		.4byte	.LASF66
+ 1099 0477 7F       		.sleb128 -1
+ 1100 0478 12       		.uleb128 0x12
+ 1101 0479 44030000 		.4byte	.LASF67
+ 1102 047d 00       		.sleb128 0
+ 1103 047e 12       		.uleb128 0x12
+ 1104 047f 52030000 		.4byte	.LASF68
+ 1105 0483 01       		.sleb128 1
+ 1106 0484 12       		.uleb128 0x12
+ 1107 0485 60030000 		.4byte	.LASF69
+ 1108 0489 02       		.sleb128 2
+ 1109 048a 12       		.uleb128 0x12
+ 1110 048b 6E030000 		.4byte	.LASF70
+ 1111 048f 03       		.sleb128 3
+ 1112 0490 12       		.uleb128 0x12
+ 1113 0491 7C030000 		.4byte	.LASF71
+ 1114 0495 04       		.sleb128 4
+ 1115 0496 12       		.uleb128 0x12
+ 1116 0497 8A030000 		.4byte	.LASF72
+ 1117 049b 05       		.sleb128 5
+ 1118 049c 12       		.uleb128 0x12
+ 1119 049d 98030000 		.4byte	.LASF73
+ 1120 04a1 06       		.sleb128 6
+ 1121 04a2 12       		.uleb128 0x12
+ 1122 04a3 B2070000 		.4byte	.LASF74
+ 1123 04a7 07       		.sleb128 7
+ 1124 04a8 12       		.uleb128 0x12
+ 1125 04a9 BE030000 		.4byte	.LASF75
+ 1126 04ad 08       		.sleb128 8
+ 1127 04ae 12       		.uleb128 0x12
+ 1128 04af AA060000 		.4byte	.LASF76
+ 1129 04b3 09       		.sleb128 9
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 21
+
+
+ 1130 04b4 12       		.uleb128 0x12
+ 1131 04b5 B9060000 		.4byte	.LASF77
+ 1132 04b9 0A       		.sleb128 10
+ 1133 04ba 12       		.uleb128 0x12
+ 1134 04bb C8060000 		.4byte	.LASF78
+ 1135 04bf 0B       		.sleb128 11
+ 1136 04c0 12       		.uleb128 0x12
+ 1137 04c1 90000000 		.4byte	.LASF79
+ 1138 04c5 0C       		.sleb128 12
+ 1139 04c6 00       		.byte	0
+ 1140 04c7 07       		.uleb128 0x7
+ 1141 04c8 03090000 		.4byte	.LASF80
+ 1142 04cc 09       		.byte	0x9
+ 1143 04cd 9D       		.byte	0x9d
+ 1144 04ce 6A040000 		.4byte	0x46a
+ 1145 04d2 11       		.uleb128 0x11
+ 1146 04d3 01       		.byte	0x1
+ 1147 04d4 09       		.byte	0x9
+ 1148 04d5 A2       		.byte	0xa2
+ 1149 04d6 E7040000 		.4byte	0x4e7
+ 1150 04da 12       		.uleb128 0x12
+ 1151 04db F2080000 		.4byte	.LASF81
+ 1152 04df 00       		.sleb128 0
+ 1153 04e0 12       		.uleb128 0x12
+ 1154 04e1 75000000 		.4byte	.LASF82
+ 1155 04e5 01       		.sleb128 1
+ 1156 04e6 00       		.byte	0
+ 1157 04e7 07       		.uleb128 0x7
+ 1158 04e8 90010000 		.4byte	.LASF83
+ 1159 04ec 09       		.byte	0x9
+ 1160 04ed A5       		.byte	0xa5
+ 1161 04ee D2040000 		.4byte	0x4d2
+ 1162 04f2 11       		.uleb128 0x11
+ 1163 04f3 01       		.byte	0x1
+ 1164 04f4 0A       		.byte	0xa
+ 1165 04f5 63       		.byte	0x63
+ 1166 04f6 19050000 		.4byte	0x519
+ 1167 04fa 12       		.uleb128 0x12
+ 1168 04fb B0040000 		.4byte	.LASF84
+ 1169 04ff 00       		.sleb128 0
+ 1170 0500 12       		.uleb128 0x12
+ 1171 0501 3B000000 		.4byte	.LASF85
+ 1172 0505 01       		.sleb128 1
+ 1173 0506 12       		.uleb128 0x12
+ 1174 0507 E2040000 		.4byte	.LASF86
+ 1175 050b 02       		.sleb128 2
+ 1176 050c 12       		.uleb128 0x12
+ 1177 050d D4040000 		.4byte	.LASF87
+ 1178 0511 03       		.sleb128 3
+ 1179 0512 12       		.uleb128 0x12
+ 1180 0513 65010000 		.4byte	.LASF88
+ 1181 0517 04       		.sleb128 4
+ 1182 0518 00       		.byte	0
+ 1183 0519 07       		.uleb128 0x7
+ 1184 051a 0C050000 		.4byte	.LASF89
+ 1185 051e 0A       		.byte	0xa
+ 1186 051f 69       		.byte	0x69
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 22
+
+
+ 1187 0520 F2040000 		.4byte	0x4f2
+ 1188 0524 11       		.uleb128 0x11
+ 1189 0525 01       		.byte	0x1
+ 1190 0526 0A       		.byte	0xa
+ 1191 0527 6E       		.byte	0x6e
+ 1192 0528 75050000 		.4byte	0x575
+ 1193 052c 12       		.uleb128 0x12
+ 1194 052d 44080000 		.4byte	.LASF90
+ 1195 0531 7F       		.sleb128 -1
+ 1196 0532 12       		.uleb128 0x12
+ 1197 0533 7F020000 		.4byte	.LASF91
+ 1198 0537 00       		.sleb128 0
+ 1199 0538 12       		.uleb128 0x12
+ 1200 0539 8B020000 		.4byte	.LASF92
+ 1201 053d 01       		.sleb128 1
+ 1202 053e 12       		.uleb128 0x12
+ 1203 053f 0B000000 		.4byte	.LASF93
+ 1204 0543 02       		.sleb128 2
+ 1205 0544 12       		.uleb128 0x12
+ 1206 0545 A2020000 		.4byte	.LASF94
+ 1207 0549 03       		.sleb128 3
+ 1208 054a 12       		.uleb128 0x12
+ 1209 054b AE020000 		.4byte	.LASF95
+ 1210 054f 04       		.sleb128 4
+ 1211 0550 12       		.uleb128 0x12
+ 1212 0551 BA020000 		.4byte	.LASF96
+ 1213 0555 05       		.sleb128 5
+ 1214 0556 12       		.uleb128 0x12
+ 1215 0557 C6020000 		.4byte	.LASF97
+ 1216 055b 06       		.sleb128 6
+ 1217 055c 12       		.uleb128 0x12
+ 1218 055d D2020000 		.4byte	.LASF98
+ 1219 0561 07       		.sleb128 7
+ 1220 0562 12       		.uleb128 0x12
+ 1221 0563 DE020000 		.4byte	.LASF99
+ 1222 0567 08       		.sleb128 8
+ 1223 0568 12       		.uleb128 0x12
+ 1224 0569 A0010000 		.4byte	.LASF100
+ 1225 056d 09       		.sleb128 9
+ 1226 056e 12       		.uleb128 0x12
+ 1227 056f 1E030000 		.4byte	.LASF101
+ 1228 0573 0A       		.sleb128 10
+ 1229 0574 00       		.byte	0
+ 1230 0575 07       		.uleb128 0x7
+ 1231 0576 FF030000 		.4byte	.LASF102
+ 1232 057a 0A       		.byte	0xa
+ 1233 057b 7C       		.byte	0x7c
+ 1234 057c 24050000 		.4byte	0x524
+ 1235 0580 11       		.uleb128 0x11
+ 1236 0581 01       		.byte	0x1
+ 1237 0582 0B       		.byte	0xb
+ 1238 0583 46       		.byte	0x46
+ 1239 0584 C6050000 		.4byte	0x5c6
+ 1240 0588 12       		.uleb128 0x12
+ 1241 0589 FE040000 		.4byte	.LASF103
+ 1242 058d 00       		.sleb128 0
+ 1243 058e 12       		.uleb128 0x12
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 23
+
+
+ 1244 058f 48060000 		.4byte	.LASF104
+ 1245 0593 01       		.sleb128 1
+ 1246 0594 12       		.uleb128 0x12
+ 1247 0595 56060000 		.4byte	.LASF105
+ 1248 0599 02       		.sleb128 2
+ 1249 059a 12       		.uleb128 0x12
+ 1250 059b 64060000 		.4byte	.LASF106
+ 1251 059f 03       		.sleb128 3
+ 1252 05a0 12       		.uleb128 0x12
+ 1253 05a1 72060000 		.4byte	.LASF107
+ 1254 05a5 04       		.sleb128 4
+ 1255 05a6 12       		.uleb128 0x12
+ 1256 05a7 80060000 		.4byte	.LASF108
+ 1257 05ab 05       		.sleb128 5
+ 1258 05ac 12       		.uleb128 0x12
+ 1259 05ad 8E060000 		.4byte	.LASF109
+ 1260 05b1 06       		.sleb128 6
+ 1261 05b2 12       		.uleb128 0x12
+ 1262 05b3 9C060000 		.4byte	.LASF110
+ 1263 05b7 07       		.sleb128 7
+ 1264 05b8 12       		.uleb128 0x12
+ 1265 05b9 02020000 		.4byte	.LASF111
+ 1266 05bd 08       		.sleb128 8
+ 1267 05be 12       		.uleb128 0x12
+ 1268 05bf 20080000 		.4byte	.LASF112
+ 1269 05c3 E300     		.sleb128 99
+ 1270 05c5 00       		.byte	0
+ 1271 05c6 11       		.uleb128 0x11
+ 1272 05c7 01       		.byte	0x1
+ 1273 05c8 0C       		.byte	0xc
+ 1274 05c9 3A       		.byte	0x3a
+ 1275 05ca 05060000 		.4byte	0x605
+ 1276 05ce 12       		.uleb128 0x12
+ 1277 05cf E7010000 		.4byte	.LASF113
+ 1278 05d3 00       		.sleb128 0
+ 1279 05d4 12       		.uleb128 0x12
+ 1280 05d5 5E000000 		.4byte	.LASF114
+ 1281 05d9 01       		.sleb128 1
+ 1282 05da 12       		.uleb128 0x12
+ 1283 05db A6030000 		.4byte	.LASF115
+ 1284 05df 02       		.sleb128 2
+ 1285 05e0 12       		.uleb128 0x12
+ 1286 05e1 2F070000 		.4byte	.LASF116
+ 1287 05e5 03       		.sleb128 3
+ 1288 05e6 12       		.uleb128 0x12
+ 1289 05e7 67070000 		.4byte	.LASF117
+ 1290 05eb 04       		.sleb128 4
+ 1291 05ec 12       		.uleb128 0x12
+ 1292 05ed 80080000 		.4byte	.LASF118
+ 1293 05f1 05       		.sleb128 5
+ 1294 05f2 12       		.uleb128 0x12
+ 1295 05f3 F0040000 		.4byte	.LASF119
+ 1296 05f7 06       		.sleb128 6
+ 1297 05f8 12       		.uleb128 0x12
+ 1298 05f9 11070000 		.4byte	.LASF120
+ 1299 05fd 07       		.sleb128 7
+ 1300 05fe 12       		.uleb128 0x12
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 24
+
+
+ 1301 05ff C0070000 		.4byte	.LASF121
+ 1302 0603 08       		.sleb128 8
+ 1303 0604 00       		.byte	0
+ 1304 0605 07       		.uleb128 0x7
+ 1305 0606 2B030000 		.4byte	.LASF122
+ 1306 060a 0C       		.byte	0xc
+ 1307 060b 45       		.byte	0x45
+ 1308 060c C6050000 		.4byte	0x5c6
+ 1309 0610 11       		.uleb128 0x11
+ 1310 0611 01       		.byte	0x1
+ 1311 0612 0C       		.byte	0xc
+ 1312 0613 50       		.byte	0x50
+ 1313 0614 43060000 		.4byte	0x643
+ 1314 0618 12       		.uleb128 0x12
+ 1315 0619 53080000 		.4byte	.LASF123
+ 1316 061d 00       		.sleb128 0
+ 1317 061e 12       		.uleb128 0x12
+ 1318 061f 48000000 		.4byte	.LASF124
+ 1319 0623 01       		.sleb128 1
+ 1320 0624 12       		.uleb128 0x12
+ 1321 0625 19020000 		.4byte	.LASF125
+ 1322 0629 0A       		.sleb128 10
+ 1323 062a 12       		.uleb128 0x12
+ 1324 062b 2C020000 		.4byte	.LASF126
+ 1325 062f 0B       		.sleb128 11
+ 1326 0630 12       		.uleb128 0x12
+ 1327 0631 A7050000 		.4byte	.LASF127
+ 1328 0635 0C       		.sleb128 12
+ 1329 0636 12       		.uleb128 0x12
+ 1330 0637 14040000 		.4byte	.LASF128
+ 1331 063b 0D       		.sleb128 13
+ 1332 063c 12       		.uleb128 0x12
+ 1333 063d AD000000 		.4byte	.LASF129
+ 1334 0641 0E       		.sleb128 14
+ 1335 0642 00       		.byte	0
+ 1336 0643 07       		.uleb128 0x7
+ 1337 0644 62020000 		.4byte	.LASF130
+ 1338 0648 0C       		.byte	0xc
+ 1339 0649 59       		.byte	0x59
+ 1340 064a 10060000 		.4byte	0x610
+ 1341 064e 08       		.uleb128 0x8
+ 1342 064f DF050000 		.4byte	.LASF131
+ 1343 0653 06       		.byte	0x6
+ 1344 0654 0C       		.byte	0xc
+ 1345 0655 5F       		.byte	0x5f
+ 1346 0656 93060000 		.4byte	0x693
+ 1347 065a 0A       		.uleb128 0xa
+ 1348 065b 70696E00 		.ascii	"pin\000"
+ 1349 065f 0C       		.byte	0xc
+ 1350 0660 60       		.byte	0x60
+ 1351 0661 C7040000 		.4byte	0x4c7
+ 1352 0665 02       		.byte	0x2
+ 1353 0666 23       		.byte	0x23
+ 1354 0667 00       		.uleb128 0
+ 1355 0668 09       		.uleb128 0x9
+ 1356 0669 59000000 		.4byte	.LASF132
+ 1357 066d 0C       		.byte	0xc
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 25
+
+
+ 1358 066e 61       		.byte	0x61
+ 1359 066f 05060000 		.4byte	0x605
+ 1360 0673 02       		.byte	0x2
+ 1361 0674 23       		.byte	0x23
+ 1362 0675 01       		.uleb128 0x1
+ 1363 0676 0A       		.uleb128 0xa
+ 1364 0677 63666700 		.ascii	"cfg\000"
+ 1365 067b 0C       		.byte	0xc
+ 1366 067c 62       		.byte	0x62
+ 1367 067d 43060000 		.4byte	0x643
+ 1368 0681 02       		.byte	0x2
+ 1369 0682 23       		.byte	0x23
+ 1370 0683 02       		.uleb128 0x2
+ 1371 0684 09       		.uleb128 0x9
+ 1372 0685 2C060000 		.4byte	.LASF133
+ 1373 0689 0C       		.byte	0xc
+ 1374 068a 63       		.byte	0x63
+ 1375 068b A6000000 		.4byte	0xa6
+ 1376 068f 02       		.byte	0x2
+ 1377 0690 23       		.byte	0x23
+ 1378 0691 04       		.uleb128 0x4
+ 1379 0692 00       		.byte	0
+ 1380 0693 07       		.uleb128 0x7
+ 1381 0694 5C070000 		.4byte	.LASF134
+ 1382 0698 0C       		.byte	0xc
+ 1383 0699 64       		.byte	0x64
+ 1384 069a 4E060000 		.4byte	0x64e
+ 1385 069e 08       		.uleb128 0x8
+ 1386 069f B5080000 		.4byte	.LASF135
+ 1387 06a3 06       		.byte	0x6
+ 1388 06a4 0C       		.byte	0xc
+ 1389 06a5 6F       		.byte	0x6f
+ 1390 06a6 F1060000 		.4byte	0x6f1
+ 1391 06aa 09       		.uleb128 0x9
+ 1392 06ab 35040000 		.4byte	.LASF136
+ 1393 06af 0C       		.byte	0xc
+ 1394 06b0 70       		.byte	0x70
+ 1395 06b1 75050000 		.4byte	0x575
+ 1396 06b5 02       		.byte	0x2
+ 1397 06b6 23       		.byte	0x23
+ 1398 06b7 00       		.uleb128 0
+ 1399 06b8 09       		.uleb128 0x9
+ 1400 06b9 B5010000 		.4byte	.LASF137
+ 1401 06bd 0C       		.byte	0xc
+ 1402 06be 71       		.byte	0x71
+ 1403 06bf 19050000 		.4byte	0x519
+ 1404 06c3 02       		.byte	0x2
+ 1405 06c4 23       		.byte	0x23
+ 1406 06c5 01       		.uleb128 0x1
+ 1407 06c6 09       		.uleb128 0x9
+ 1408 06c7 3A040000 		.4byte	.LASF138
+ 1409 06cb 0C       		.byte	0xc
+ 1410 06cc 72       		.byte	0x72
+ 1411 06cd C7000000 		.4byte	0xc7
+ 1412 06d1 02       		.byte	0x2
+ 1413 06d2 23       		.byte	0x23
+ 1414 06d3 02       		.uleb128 0x2
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 26
+
+
+ 1415 06d4 09       		.uleb128 0x9
+ 1416 06d5 4B010000 		.4byte	.LASF139
+ 1417 06d9 0C       		.byte	0xc
+ 1418 06da 73       		.byte	0x73
+ 1419 06db 05060000 		.4byte	0x605
+ 1420 06df 02       		.byte	0x2
+ 1421 06e0 23       		.byte	0x23
+ 1422 06e1 03       		.uleb128 0x3
+ 1423 06e2 09       		.uleb128 0x9
+ 1424 06e3 EB050000 		.4byte	.LASF140
+ 1425 06e7 0C       		.byte	0xc
+ 1426 06e8 74       		.byte	0x74
+ 1427 06e9 9B000000 		.4byte	0x9b
+ 1428 06ed 02       		.byte	0x2
+ 1429 06ee 23       		.byte	0x23
+ 1430 06ef 04       		.uleb128 0x4
+ 1431 06f0 00       		.byte	0
+ 1432 06f1 07       		.uleb128 0x7
+ 1433 06f2 86040000 		.4byte	.LASF141
+ 1434 06f6 0C       		.byte	0xc
+ 1435 06f7 75       		.byte	0x75
+ 1436 06f8 9E060000 		.4byte	0x69e
+ 1437 06fc 11       		.uleb128 0x11
+ 1438 06fd 01       		.byte	0x1
+ 1439 06fe 0D       		.byte	0xd
+ 1440 06ff 3F       		.byte	0x3f
+ 1441 0700 3D080000 		.4byte	0x83d
+ 1442 0704 13       		.uleb128 0x13
+ 1443 0705 43683100 		.ascii	"Ch1\000"
+ 1444 0709 00       		.sleb128 0
+ 1445 070a 13       		.uleb128 0x13
+ 1446 070b 43683200 		.ascii	"Ch2\000"
+ 1447 070f 01       		.sleb128 1
+ 1448 0710 13       		.uleb128 0x13
+ 1449 0711 43683300 		.ascii	"Ch3\000"
+ 1450 0715 02       		.sleb128 2
+ 1451 0716 13       		.uleb128 0x13
+ 1452 0717 43683400 		.ascii	"Ch4\000"
+ 1453 071b 03       		.sleb128 3
+ 1454 071c 12       		.uleb128 0x12
+ 1455 071d 26040000 		.4byte	.LASF142
+ 1456 0721 04       		.sleb128 4
+ 1457 0722 12       		.uleb128 0x12
+ 1458 0723 E1060000 		.4byte	.LASF143
+ 1459 0727 05       		.sleb128 5
+ 1460 0728 12       		.uleb128 0x12
+ 1461 0729 29070000 		.4byte	.LASF144
+ 1462 072d 06       		.sleb128 6
+ 1463 072e 12       		.uleb128 0x12
+ 1464 072f 0B070000 		.4byte	.LASF145
+ 1465 0733 07       		.sleb128 7
+ 1466 0734 12       		.uleb128 0x12
+ 1467 0735 37050000 		.4byte	.LASF146
+ 1468 0739 08       		.sleb128 8
+ 1469 073a 12       		.uleb128 0x12
+ 1470 073b 5F050000 		.4byte	.LASF147
+ 1471 073f 09       		.sleb128 9
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 27
+
+
+ 1472 0740 12       		.uleb128 0x12
+ 1473 0741 13020000 		.4byte	.LASF148
+ 1474 0745 0A       		.sleb128 10
+ 1475 0746 12       		.uleb128 0x12
+ 1476 0747 63080000 		.4byte	.LASF149
+ 1477 074b 0B       		.sleb128 11
+ 1478 074c 12       		.uleb128 0x12
+ 1479 074d 00030000 		.4byte	.LASF150
+ 1480 0751 0C       		.sleb128 12
+ 1481 0752 12       		.uleb128 0x12
+ 1482 0753 FD000000 		.4byte	.LASF151
+ 1483 0757 0D       		.sleb128 13
+ 1484 0758 12       		.uleb128 0x12
+ 1485 0759 C2080000 		.4byte	.LASF152
+ 1486 075d 0E       		.sleb128 14
+ 1487 075e 12       		.uleb128 0x12
+ 1488 075f 54040000 		.4byte	.LASF153
+ 1489 0763 0F       		.sleb128 15
+ 1490 0764 12       		.uleb128 0x12
+ 1491 0765 FA070000 		.4byte	.LASF154
+ 1492 0769 10       		.sleb128 16
+ 1493 076a 12       		.uleb128 0x12
+ 1494 076b 00080000 		.4byte	.LASF155
+ 1495 076f 11       		.sleb128 17
+ 1496 0770 12       		.uleb128 0x12
+ 1497 0771 06080000 		.4byte	.LASF156
+ 1498 0775 12       		.sleb128 18
+ 1499 0776 12       		.uleb128 0x12
+ 1500 0777 45070000 		.4byte	.LASF157
+ 1501 077b 13       		.sleb128 19
+ 1502 077c 12       		.uleb128 0x12
+ 1503 077d 4A070000 		.4byte	.LASF158
+ 1504 0781 14       		.sleb128 20
+ 1505 0782 12       		.uleb128 0x12
+ 1506 0783 4F070000 		.4byte	.LASF159
+ 1507 0787 15       		.sleb128 21
+ 1508 0788 12       		.uleb128 0x12
+ 1509 0789 06030000 		.4byte	.LASF160
+ 1510 078d 16       		.sleb128 22
+ 1511 078e 12       		.uleb128 0x12
+ 1512 078f C4010000 		.4byte	.LASF161
+ 1513 0793 17       		.sleb128 23
+ 1514 0794 12       		.uleb128 0x12
+ 1515 0795 87000000 		.4byte	.LASF162
+ 1516 0799 8001     		.sleb128 128
+ 1517 079b 12       		.uleb128 0x12
+ 1518 079c 77080000 		.4byte	.LASF163
+ 1519 07a0 8101     		.sleb128 129
+ 1520 07a2 12       		.uleb128 0x12
+ 1521 07a3 32000000 		.4byte	.LASF164
+ 1522 07a7 8201     		.sleb128 130
+ 1523 07a9 12       		.uleb128 0x12
+ 1524 07aa 2A010000 		.4byte	.LASF165
+ 1525 07ae 8301     		.sleb128 131
+ 1526 07b0 12       		.uleb128 0x12
+ 1527 07b1 00000000 		.4byte	.LASF166
+ 1528 07b5 8401     		.sleb128 132
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 28
+
+
+ 1529 07b7 12       		.uleb128 0x12
+ 1530 07b8 EF070000 		.4byte	.LASF167
+ 1531 07bc 8501     		.sleb128 133
+ 1532 07be 12       		.uleb128 0x12
+ 1533 07bf D3010000 		.4byte	.LASF168
+ 1534 07c3 8601     		.sleb128 134
+ 1535 07c5 12       		.uleb128 0x12
+ 1536 07c6 5A010000 		.4byte	.LASF169
+ 1537 07ca 8701     		.sleb128 135
+ 1538 07cc 12       		.uleb128 0x12
+ 1539 07cd 09040000 		.4byte	.LASF170
+ 1540 07d1 8801     		.sleb128 136
+ 1541 07d3 12       		.uleb128 0x12
+ 1542 07d4 EA020000 		.4byte	.LASF171
+ 1543 07d8 8901     		.sleb128 137
+ 1544 07da 12       		.uleb128 0x12
+ 1545 07db F5020000 		.4byte	.LASF172
+ 1546 07df 8A01     		.sleb128 138
+ 1547 07e1 12       		.uleb128 0x12
+ 1548 07e2 9F080000 		.4byte	.LASF173
+ 1549 07e6 8B01     		.sleb128 139
+ 1550 07e8 12       		.uleb128 0x12
+ 1551 07e9 F4030000 		.4byte	.LASF174
+ 1552 07ed 8C01     		.sleb128 140
+ 1553 07ef 12       		.uleb128 0x12
+ 1554 07f0 74020000 		.4byte	.LASF175
+ 1555 07f4 8D01     		.sleb128 141
+ 1556 07f6 12       		.uleb128 0x12
+ 1557 07f7 AA080000 		.4byte	.LASF176
+ 1558 07fb 8E01     		.sleb128 142
+ 1559 07fd 12       		.uleb128 0x12
+ 1560 07fe A7070000 		.4byte	.LASF177
+ 1561 0802 8F01     		.sleb128 143
+ 1562 0804 12       		.uleb128 0x12
+ 1563 0805 94080000 		.4byte	.LASF178
+ 1564 0809 9001     		.sleb128 144
+ 1565 080b 12       		.uleb128 0x12
+ 1566 080c 79070000 		.4byte	.LASF179
+ 1567 0810 9101     		.sleb128 145
+ 1568 0812 12       		.uleb128 0x12
+ 1569 0813 43040000 		.4byte	.LASF180
+ 1570 0817 9201     		.sleb128 146
+ 1571 0819 12       		.uleb128 0x12
+ 1572 081a 77050000 		.4byte	.LASF181
+ 1573 081e 9301     		.sleb128 147
+ 1574 0820 12       		.uleb128 0x12
+ 1575 0821 D7060000 		.4byte	.LASF182
+ 1576 0825 9401     		.sleb128 148
+ 1577 0827 12       		.uleb128 0x12
+ 1578 0828 DB070000 		.4byte	.LASF183
+ 1579 082c 9501     		.sleb128 149
+ 1580 082e 12       		.uleb128 0x12
+ 1581 082f 8B070000 		.4byte	.LASF184
+ 1582 0833 9601     		.sleb128 150
+ 1583 0835 12       		.uleb128 0x12
+ 1584 0836 38080000 		.4byte	.LASF185
+ 1585 083a 9701     		.sleb128 151
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 29
+
+
+ 1586 083c 00       		.byte	0
+ 1587 083d 07       		.uleb128 0x7
+ 1588 083e 95070000 		.4byte	.LASF186
+ 1589 0842 0D       		.byte	0xd
+ 1590 0843 51       		.byte	0x51
+ 1591 0844 FC060000 		.4byte	0x6fc
+ 1592 0848 14       		.uleb128 0x14
+ 1593 0849 01       		.byte	0x1
+ 1594 084a 1E000000 		.4byte	.LASF204
+ 1595 084e 01       		.byte	0x1
+ 1596 084f 66       		.byte	0x66
+ 1597 0850 01       		.byte	0x1
+ 1598 0851 00000000 		.4byte	.LFB63
+ 1599 0855 22000000 		.4byte	.LFE63
+ 1600 0859 00000000 		.4byte	.LLST0
+ 1601 085d 01       		.byte	0x1
+ 1602 085e 98080000 		.4byte	0x898
+ 1603 0862 15       		.uleb128 0x15
+ 1604 0863 10000000 		.4byte	.LVL0
+ 1605 0867 F90B0000 		.4byte	0xbf9
+ 1606 086b 7E080000 		.4byte	0x87e
+ 1607 086f 16       		.uleb128 0x16
+ 1608 0870 01       		.byte	0x1
+ 1609 0871 51       		.byte	0x51
+ 1610 0872 01       		.byte	0x1
+ 1611 0873 3C       		.byte	0x3c
+ 1612 0874 16       		.uleb128 0x16
+ 1613 0875 01       		.byte	0x1
+ 1614 0876 50       		.byte	0x50
+ 1615 0877 05       		.byte	0x5
+ 1616 0878 03       		.byte	0x3
+ 1617 0879 00000000 		.4byte	.LANCHOR0
+ 1618 087d 00       		.byte	0
+ 1619 087e 17       		.uleb128 0x17
+ 1620 087f 22000000 		.4byte	.LVL1
+ 1621 0883 01       		.byte	0x1
+ 1622 0884 180C0000 		.4byte	0xc18
+ 1623 0888 16       		.uleb128 0x16
+ 1624 0889 01       		.byte	0x1
+ 1625 088a 51       		.byte	0x51
+ 1626 088b 01       		.byte	0x1
+ 1627 088c 3A       		.byte	0x3a
+ 1628 088d 16       		.uleb128 0x16
+ 1629 088e 01       		.byte	0x1
+ 1630 088f 50       		.byte	0x50
+ 1631 0890 05       		.byte	0x5
+ 1632 0891 03       		.byte	0x3
+ 1633 0892 00000000 		.4byte	.LANCHOR1
+ 1634 0896 00       		.byte	0
+ 1635 0897 00       		.byte	0
+ 1636 0898 18       		.uleb128 0x18
+ 1637 0899 01       		.byte	0x1
+ 1638 089a F6010000 		.4byte	.LASF205
+ 1639 089e 01       		.byte	0x1
+ 1640 089f 75       		.byte	0x75
+ 1641 08a0 01       		.byte	0x1
+ 1642 08a1 00000000 		.4byte	.LFB64
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 30
+
+
+ 1643 08a5 02000000 		.4byte	.LFE64
+ 1644 08a9 02       		.byte	0x2
+ 1645 08aa 7D       		.byte	0x7d
+ 1646 08ab 00       		.sleb128 0
+ 1647 08ac 01       		.byte	0x1
+ 1648 08ad 19       		.uleb128 0x19
+ 1649 08ae 01       		.byte	0x1
+ 1650 08af 0C080000 		.4byte	.LASF187
+ 1651 08b3 01       		.byte	0x1
+ 1652 08b4 81       		.byte	0x81
+ 1653 08b5 01       		.byte	0x1
+ 1654 08b6 10010000 		.4byte	0x110
+ 1655 08ba 00000000 		.4byte	.LFB65
+ 1656 08be 14000000 		.4byte	.LFE65
+ 1657 08c2 20000000 		.4byte	.LLST1
+ 1658 08c6 01       		.byte	0x1
+ 1659 08c7 01090000 		.4byte	0x901
+ 1660 08cb 1A       		.uleb128 0x1a
+ 1661 08cc 61726700 		.ascii	"arg\000"
+ 1662 08d0 01       		.byte	0x1
+ 1663 08d1 81       		.byte	0x81
+ 1664 08d2 6F000000 		.4byte	0x6f
+ 1665 08d6 40000000 		.4byte	.LLST2
+ 1666 08da 15       		.uleb128 0x15
+ 1667 08db 08000000 		.4byte	.LVL4
+ 1668 08df 370C0000 		.4byte	0xc37
+ 1669 08e3 F1080000 		.4byte	0x8f1
+ 1670 08e7 16       		.uleb128 0x16
+ 1671 08e8 01       		.byte	0x1
+ 1672 08e9 50       		.byte	0x50
+ 1673 08ea 05       		.byte	0x5
+ 1674 08eb 03       		.byte	0x3
+ 1675 08ec 00000000 		.4byte	.LC0
+ 1676 08f0 00       		.byte	0
+ 1677 08f1 1B       		.uleb128 0x1b
+ 1678 08f2 0E000000 		.4byte	.LVL5
+ 1679 08f6 4B0C0000 		.4byte	0xc4b
+ 1680 08fa 16       		.uleb128 0x16
+ 1681 08fb 01       		.byte	0x1
+ 1682 08fc 50       		.byte	0x50
+ 1683 08fd 01       		.byte	0x1
+ 1684 08fe 49       		.byte	0x49
+ 1685 08ff 00       		.byte	0
+ 1686 0900 00       		.byte	0
+ 1687 0901 19       		.uleb128 0x19
+ 1688 0902 01       		.byte	0x1
+ 1689 0903 3F020000 		.4byte	.LASF188
+ 1690 0907 01       		.byte	0x1
+ 1691 0908 9B       		.byte	0x9b
+ 1692 0909 01       		.byte	0x1
+ 1693 090a 10010000 		.4byte	0x110
+ 1694 090e 00000000 		.4byte	.LFB66
+ 1695 0912 7C010000 		.4byte	.LFE66
+ 1696 0916 61000000 		.4byte	.LLST3
+ 1697 091a 01       		.byte	0x1
+ 1698 091b 9C0B0000 		.4byte	0xb9c
+ 1699 091f 1A       		.uleb128 0x1a
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 31
+
+
+ 1700 0920 61726700 		.ascii	"arg\000"
+ 1701 0924 01       		.byte	0x1
+ 1702 0925 9B       		.byte	0x9b
+ 1703 0926 6F000000 		.4byte	0x6f
+ 1704 092a 81000000 		.4byte	.LLST4
+ 1705 092e 1C       		.uleb128 0x1c
+ 1706 092f 00000000 		.4byte	.Ldebug_ranges0+0
+ 1707 0933 880B0000 		.4byte	0xb88
+ 1708 0937 1D       		.uleb128 0x1d
+ 1709 0938 3A030000 		.4byte	.LASF189
+ 1710 093c 01       		.byte	0x1
+ 1711 093d AB       		.byte	0xab
+ 1712 093e 4C000000 		.4byte	0x4c
+ 1713 0942 A2000000 		.4byte	.LLST5
+ 1714 0946 1D       		.uleb128 0x1d
+ 1715 0947 3F030000 		.4byte	.LASF190
+ 1716 094b 01       		.byte	0x1
+ 1717 094c AC       		.byte	0xac
+ 1718 094d 4C000000 		.4byte	0x4c
+ 1719 0951 CC000000 		.4byte	.LLST6
+ 1720 0955 1D       		.uleb128 0x1d
+ 1721 0956 46010000 		.4byte	.LASF191
+ 1722 095a 01       		.byte	0x1
+ 1723 095b AD       		.byte	0xad
+ 1724 095c 4C000000 		.4byte	0x4c
+ 1725 0960 F6000000 		.4byte	.LLST7
+ 1726 0964 15       		.uleb128 0x15
+ 1727 0965 2A000000 		.4byte	.LVL10
+ 1728 0969 5F0C0000 		.4byte	0xc5f
+ 1729 096d 77090000 		.4byte	0x977
+ 1730 0971 16       		.uleb128 0x16
+ 1731 0972 01       		.byte	0x1
+ 1732 0973 50       		.byte	0x50
+ 1733 0974 01       		.byte	0x1
+ 1734 0975 3F       		.byte	0x3f
+ 1735 0976 00       		.byte	0
+ 1736 0977 15       		.uleb128 0x15
+ 1737 0978 32000000 		.4byte	.LVL11
+ 1738 097c 5F0C0000 		.4byte	0xc5f
+ 1739 0980 8A090000 		.4byte	0x98a
+ 1740 0984 16       		.uleb128 0x16
+ 1741 0985 01       		.byte	0x1
+ 1742 0986 50       		.byte	0x50
+ 1743 0987 01       		.byte	0x1
+ 1744 0988 3E       		.byte	0x3e
+ 1745 0989 00       		.byte	0
+ 1746 098a 15       		.uleb128 0x15
+ 1747 098b 48000000 		.4byte	.LVL12
+ 1748 098f 770C0000 		.4byte	0xc77
+ 1749 0993 9D090000 		.4byte	0x99d
+ 1750 0997 16       		.uleb128 0x16
+ 1751 0998 01       		.byte	0x1
+ 1752 0999 50       		.byte	0x50
+ 1753 099a 01       		.byte	0x1
+ 1754 099b 32       		.byte	0x32
+ 1755 099c 00       		.byte	0
+ 1756 099d 15       		.uleb128 0x15
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 32
+
+
+ 1757 099e 4E000000 		.4byte	.LVL13
+ 1758 09a2 5F0C0000 		.4byte	0xc5f
+ 1759 09a6 B0090000 		.4byte	0x9b0
+ 1760 09aa 16       		.uleb128 0x16
+ 1761 09ab 01       		.byte	0x1
+ 1762 09ac 50       		.byte	0x50
+ 1763 09ad 01       		.byte	0x1
+ 1764 09ae 3F       		.byte	0x3f
+ 1765 09af 00       		.byte	0
+ 1766 09b0 15       		.uleb128 0x15
+ 1767 09b1 56000000 		.4byte	.LVL14
+ 1768 09b5 5F0C0000 		.4byte	0xc5f
+ 1769 09b9 C3090000 		.4byte	0x9c3
+ 1770 09bd 16       		.uleb128 0x16
+ 1771 09be 01       		.byte	0x1
+ 1772 09bf 50       		.byte	0x50
+ 1773 09c0 01       		.byte	0x1
+ 1774 09c1 3E       		.byte	0x3e
+ 1775 09c2 00       		.byte	0
+ 1776 09c3 15       		.uleb128 0x15
+ 1777 09c4 6C000000 		.4byte	.LVL15
+ 1778 09c8 770C0000 		.4byte	0xc77
+ 1779 09cc D7090000 		.4byte	0x9d7
+ 1780 09d0 16       		.uleb128 0x16
+ 1781 09d1 01       		.byte	0x1
+ 1782 09d2 50       		.byte	0x50
+ 1783 09d3 02       		.byte	0x2
+ 1784 09d4 74       		.byte	0x74
+ 1785 09d5 00       		.sleb128 0
+ 1786 09d6 00       		.byte	0
+ 1787 09d7 15       		.uleb128 0x15
+ 1788 09d8 72000000 		.4byte	.LVL16
+ 1789 09dc 5F0C0000 		.4byte	0xc5f
+ 1790 09e0 EA090000 		.4byte	0x9ea
+ 1791 09e4 16       		.uleb128 0x16
+ 1792 09e5 01       		.byte	0x1
+ 1793 09e6 50       		.byte	0x50
+ 1794 09e7 01       		.byte	0x1
+ 1795 09e8 3F       		.byte	0x3f
+ 1796 09e9 00       		.byte	0
+ 1797 09ea 15       		.uleb128 0x15
+ 1798 09eb 7A000000 		.4byte	.LVL17
+ 1799 09ef 5F0C0000 		.4byte	0xc5f
+ 1800 09f3 FD090000 		.4byte	0x9fd
+ 1801 09f7 16       		.uleb128 0x16
+ 1802 09f8 01       		.byte	0x1
+ 1803 09f9 50       		.byte	0x50
+ 1804 09fa 01       		.byte	0x1
+ 1805 09fb 3E       		.byte	0x3e
+ 1806 09fc 00       		.byte	0
+ 1807 09fd 15       		.uleb128 0x15
+ 1808 09fe 90000000 		.4byte	.LVL18
+ 1809 0a02 770C0000 		.4byte	0xc77
+ 1810 0a06 100A0000 		.4byte	0xa10
+ 1811 0a0a 16       		.uleb128 0x16
+ 1812 0a0b 01       		.byte	0x1
+ 1813 0a0c 50       		.byte	0x50
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 33
+
+
+ 1814 0a0d 01       		.byte	0x1
+ 1815 0a0e 37       		.byte	0x37
+ 1816 0a0f 00       		.byte	0
+ 1817 0a10 15       		.uleb128 0x15
+ 1818 0a11 96000000 		.4byte	.LVL19
+ 1819 0a15 5F0C0000 		.4byte	0xc5f
+ 1820 0a19 230A0000 		.4byte	0xa23
+ 1821 0a1d 16       		.uleb128 0x16
+ 1822 0a1e 01       		.byte	0x1
+ 1823 0a1f 50       		.byte	0x50
+ 1824 0a20 01       		.byte	0x1
+ 1825 0a21 3F       		.byte	0x3f
+ 1826 0a22 00       		.byte	0
+ 1827 0a23 15       		.uleb128 0x15
+ 1828 0a24 9E000000 		.4byte	.LVL20
+ 1829 0a28 5F0C0000 		.4byte	0xc5f
+ 1830 0a2c 360A0000 		.4byte	0xa36
+ 1831 0a30 16       		.uleb128 0x16
+ 1832 0a31 01       		.byte	0x1
+ 1833 0a32 50       		.byte	0x50
+ 1834 0a33 01       		.byte	0x1
+ 1835 0a34 3E       		.byte	0x3e
+ 1836 0a35 00       		.byte	0
+ 1837 0a36 15       		.uleb128 0x15
+ 1838 0a37 B4000000 		.4byte	.LVL21
+ 1839 0a3b 770C0000 		.4byte	0xc77
+ 1840 0a3f 490A0000 		.4byte	0xa49
+ 1841 0a43 16       		.uleb128 0x16
+ 1842 0a44 01       		.byte	0x1
+ 1843 0a45 50       		.byte	0x50
+ 1844 0a46 01       		.byte	0x1
+ 1845 0a47 39       		.byte	0x39
+ 1846 0a48 00       		.byte	0
+ 1847 0a49 15       		.uleb128 0x15
+ 1848 0a4a BA000000 		.4byte	.LVL22
+ 1849 0a4e 5F0C0000 		.4byte	0xc5f
+ 1850 0a52 5C0A0000 		.4byte	0xa5c
+ 1851 0a56 16       		.uleb128 0x16
+ 1852 0a57 01       		.byte	0x1
+ 1853 0a58 50       		.byte	0x50
+ 1854 0a59 01       		.byte	0x1
+ 1855 0a5a 3D       		.byte	0x3d
+ 1856 0a5b 00       		.byte	0
+ 1857 0a5c 15       		.uleb128 0x15
+ 1858 0a5d C2000000 		.4byte	.LVL23
+ 1859 0a61 5F0C0000 		.4byte	0xc5f
+ 1860 0a65 6F0A0000 		.4byte	0xa6f
+ 1861 0a69 16       		.uleb128 0x16
+ 1862 0a6a 01       		.byte	0x1
+ 1863 0a6b 50       		.byte	0x50
+ 1864 0a6c 01       		.byte	0x1
+ 1865 0a6d 3C       		.byte	0x3c
+ 1866 0a6e 00       		.byte	0
+ 1867 0a6f 15       		.uleb128 0x15
+ 1868 0a70 D4000000 		.4byte	.LVL24
+ 1869 0a74 770C0000 		.4byte	0xc77
+ 1870 0a78 820A0000 		.4byte	0xa82
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 34
+
+
+ 1871 0a7c 16       		.uleb128 0x16
+ 1872 0a7d 01       		.byte	0x1
+ 1873 0a7e 50       		.byte	0x50
+ 1874 0a7f 01       		.byte	0x1
+ 1875 0a80 35       		.byte	0x35
+ 1876 0a81 00       		.byte	0
+ 1877 0a82 15       		.uleb128 0x15
+ 1878 0a83 DA000000 		.4byte	.LVL25
+ 1879 0a87 5F0C0000 		.4byte	0xc5f
+ 1880 0a8b 950A0000 		.4byte	0xa95
+ 1881 0a8f 16       		.uleb128 0x16
+ 1882 0a90 01       		.byte	0x1
+ 1883 0a91 50       		.byte	0x50
+ 1884 0a92 01       		.byte	0x1
+ 1885 0a93 3B       		.byte	0x3b
+ 1886 0a94 00       		.byte	0
+ 1887 0a95 15       		.uleb128 0x15
+ 1888 0a96 EA000000 		.4byte	.LVL26
+ 1889 0a9a 770C0000 		.4byte	0xc77
+ 1890 0a9e A80A0000 		.4byte	0xaa8
+ 1891 0aa2 16       		.uleb128 0x16
+ 1892 0aa3 01       		.byte	0x1
+ 1893 0aa4 50       		.byte	0x50
+ 1894 0aa5 01       		.byte	0x1
+ 1895 0aa6 34       		.byte	0x34
+ 1896 0aa7 00       		.byte	0
+ 1897 0aa8 15       		.uleb128 0x15
+ 1898 0aa9 F2000000 		.4byte	.LVL27
+ 1899 0aad 900C0000 		.4byte	0xc90
+ 1900 0ab1 C00A0000 		.4byte	0xac0
+ 1901 0ab5 16       		.uleb128 0x16
+ 1902 0ab6 01       		.byte	0x1
+ 1903 0ab7 51       		.byte	0x51
+ 1904 0ab8 01       		.byte	0x1
+ 1905 0ab9 31       		.byte	0x31
+ 1906 0aba 16       		.uleb128 0x16
+ 1907 0abb 01       		.byte	0x1
+ 1908 0abc 50       		.byte	0x50
+ 1909 0abd 01       		.byte	0x1
+ 1910 0abe 39       		.byte	0x39
+ 1911 0abf 00       		.byte	0
+ 1912 0ac0 15       		.uleb128 0x15
+ 1913 0ac1 FA000000 		.4byte	.LVL28
+ 1914 0ac5 900C0000 		.4byte	0xc90
+ 1915 0ac9 D80A0000 		.4byte	0xad8
+ 1916 0acd 16       		.uleb128 0x16
+ 1917 0ace 01       		.byte	0x1
+ 1918 0acf 51       		.byte	0x51
+ 1919 0ad0 01       		.byte	0x1
+ 1920 0ad1 31       		.byte	0x31
+ 1921 0ad2 16       		.uleb128 0x16
+ 1922 0ad3 01       		.byte	0x1
+ 1923 0ad4 50       		.byte	0x50
+ 1924 0ad5 01       		.byte	0x1
+ 1925 0ad6 3A       		.byte	0x3a
+ 1926 0ad7 00       		.byte	0
+ 1927 0ad8 15       		.uleb128 0x15
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 35
+
+
+ 1928 0ad9 00010000 		.4byte	.LVL29
+ 1929 0add 4B0C0000 		.4byte	0xc4b
+ 1930 0ae1 EB0A0000 		.4byte	0xaeb
+ 1931 0ae5 16       		.uleb128 0x16
+ 1932 0ae6 01       		.byte	0x1
+ 1933 0ae7 50       		.byte	0x50
+ 1934 0ae8 01       		.byte	0x1
+ 1935 0ae9 49       		.byte	0x49
+ 1936 0aea 00       		.byte	0
+ 1937 0aeb 15       		.uleb128 0x15
+ 1938 0aec 14010000 		.4byte	.LVL30
+ 1939 0af0 5F0C0000 		.4byte	0xc5f
+ 1940 0af4 FE0A0000 		.4byte	0xafe
+ 1941 0af8 16       		.uleb128 0x16
+ 1942 0af9 01       		.byte	0x1
+ 1943 0afa 50       		.byte	0x50
+ 1944 0afb 01       		.byte	0x1
+ 1945 0afc 33       		.byte	0x33
+ 1946 0afd 00       		.byte	0
+ 1947 0afe 15       		.uleb128 0x15
+ 1948 0aff 1C010000 		.4byte	.LVL33
+ 1949 0b03 5F0C0000 		.4byte	0xc5f
+ 1950 0b07 110B0000 		.4byte	0xb11
+ 1951 0b0b 16       		.uleb128 0x16
+ 1952 0b0c 01       		.byte	0x1
+ 1953 0b0d 50       		.byte	0x50
+ 1954 0b0e 01       		.byte	0x1
+ 1955 0b0f 32       		.byte	0x32
+ 1956 0b10 00       		.byte	0
+ 1957 0b11 15       		.uleb128 0x15
+ 1958 0b12 24010000 		.4byte	.LVL36
+ 1959 0b16 5F0C0000 		.4byte	0xc5f
+ 1960 0b1a 240B0000 		.4byte	0xb24
+ 1961 0b1e 16       		.uleb128 0x16
+ 1962 0b1f 01       		.byte	0x1
+ 1963 0b20 50       		.byte	0x50
+ 1964 0b21 01       		.byte	0x1
+ 1965 0b22 30       		.byte	0x30
+ 1966 0b23 00       		.byte	0
+ 1967 0b24 15       		.uleb128 0x15
+ 1968 0b25 38010000 		.4byte	.LVL40
+ 1969 0b29 770C0000 		.4byte	0xc77
+ 1970 0b2d 400B0000 		.4byte	0xb40
+ 1971 0b31 16       		.uleb128 0x16
+ 1972 0b32 01       		.byte	0x1
+ 1973 0b33 51       		.byte	0x51
+ 1974 0b34 05       		.byte	0x5
+ 1975 0b35 77       		.byte	0x77
+ 1976 0b36 00       		.sleb128 0
+ 1977 0b37 74       		.byte	0x74
+ 1978 0b38 00       		.sleb128 0
+ 1979 0b39 22       		.byte	0x22
+ 1980 0b3a 16       		.uleb128 0x16
+ 1981 0b3b 01       		.byte	0x1
+ 1982 0b3c 50       		.byte	0x50
+ 1983 0b3d 01       		.byte	0x1
+ 1984 0b3e 33       		.byte	0x33
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 36
+
+
+ 1985 0b3f 00       		.byte	0
+ 1986 0b40 15       		.uleb128 0x15
+ 1987 0b41 46010000 		.4byte	.LVL41
+ 1988 0b45 770C0000 		.4byte	0xc77
+ 1989 0b49 530B0000 		.4byte	0xb53
+ 1990 0b4d 16       		.uleb128 0x16
+ 1991 0b4e 01       		.byte	0x1
+ 1992 0b4f 50       		.byte	0x50
+ 1993 0b50 01       		.byte	0x1
+ 1994 0b51 31       		.byte	0x31
+ 1995 0b52 00       		.byte	0
+ 1996 0b53 15       		.uleb128 0x15
+ 1997 0b54 50010000 		.4byte	.LVL42
+ 1998 0b58 770C0000 		.4byte	0xc77
+ 1999 0b5c 6F0B0000 		.4byte	0xb6f
+ 2000 0b60 16       		.uleb128 0x16
+ 2001 0b61 01       		.byte	0x1
+ 2002 0b62 51       		.byte	0x51
+ 2003 0b63 05       		.byte	0x5
+ 2004 0b64 76       		.byte	0x76
+ 2005 0b65 00       		.sleb128 0
+ 2006 0b66 75       		.byte	0x75
+ 2007 0b67 00       		.sleb128 0
+ 2008 0b68 1C       		.byte	0x1c
+ 2009 0b69 16       		.uleb128 0x16
+ 2010 0b6a 01       		.byte	0x1
+ 2011 0b6b 50       		.byte	0x50
+ 2012 0b6c 01       		.byte	0x1
+ 2013 0b6d 38       		.byte	0x38
+ 2014 0b6e 00       		.byte	0
+ 2015 0b6f 1B       		.uleb128 0x1b
+ 2016 0b70 5A010000 		.4byte	.LVL43
+ 2017 0b74 770C0000 		.4byte	0xc77
+ 2018 0b78 16       		.uleb128 0x16
+ 2019 0b79 01       		.byte	0x1
+ 2020 0b7a 51       		.byte	0x51
+ 2021 0b7b 05       		.byte	0x5
+ 2022 0b7c 74       		.byte	0x74
+ 2023 0b7d 00       		.sleb128 0
+ 2024 0b7e 77       		.byte	0x77
+ 2025 0b7f 00       		.sleb128 0
+ 2026 0b80 1C       		.byte	0x1c
+ 2027 0b81 16       		.uleb128 0x16
+ 2028 0b82 01       		.byte	0x1
+ 2029 0b83 50       		.byte	0x50
+ 2030 0b84 01       		.byte	0x1
+ 2031 0b85 36       		.byte	0x36
+ 2032 0b86 00       		.byte	0
+ 2033 0b87 00       		.byte	0
+ 2034 0b88 1B       		.uleb128 0x1b
+ 2035 0b89 0E000000 		.4byte	.LVL8
+ 2036 0b8d 370C0000 		.4byte	0xc37
+ 2037 0b91 16       		.uleb128 0x16
+ 2038 0b92 01       		.byte	0x1
+ 2039 0b93 50       		.byte	0x50
+ 2040 0b94 05       		.byte	0x5
+ 2041 0b95 03       		.byte	0x3
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 37
+
+
+ 2042 0b96 08000000 		.4byte	.LC1
+ 2043 0b9a 00       		.byte	0
+ 2044 0b9b 00       		.byte	0
+ 2045 0b9c 1E       		.uleb128 0x1e
+ 2046 0b9d 93060000 		.4byte	0x693
+ 2047 0ba1 AC0B0000 		.4byte	0xbac
+ 2048 0ba5 1F       		.uleb128 0x1f
+ 2049 0ba6 68000000 		.4byte	0x68
+ 2050 0baa 0B       		.byte	0xb
+ 2051 0bab 00       		.byte	0
+ 2052 0bac 20       		.uleb128 0x20
+ 2053 0bad 9F070000 		.4byte	.LASF192
+ 2054 0bb1 01       		.byte	0x1
+ 2055 0bb2 32       		.byte	0x32
+ 2056 0bb3 9C0B0000 		.4byte	0xb9c
+ 2057 0bb7 05       		.byte	0x5
+ 2058 0bb8 03       		.byte	0x3
+ 2059 0bb9 00000000 		.4byte	dConfig
+ 2060 0bbd 1E       		.uleb128 0x1e
+ 2061 0bbe F1060000 		.4byte	0x6f1
+ 2062 0bc2 CD0B0000 		.4byte	0xbcd
+ 2063 0bc6 1F       		.uleb128 0x1f
+ 2064 0bc7 68000000 		.4byte	0x68
+ 2065 0bcb 09       		.byte	0x9
+ 2066 0bcc 00       		.byte	0
+ 2067 0bcd 20       		.uleb128 0x20
+ 2068 0bce E7060000 		.4byte	.LASF193
+ 2069 0bd2 01       		.byte	0x1
+ 2070 0bd3 41       		.byte	0x41
+ 2071 0bd4 BD0B0000 		.4byte	0xbbd
+ 2072 0bd8 05       		.byte	0x5
+ 2073 0bd9 03       		.byte	0x3
+ 2074 0bda 00000000 		.4byte	mConfig
+ 2075 0bde 21       		.uleb128 0x21
+ 2076 0bdf 1A080000 		.4byte	.LASF194
+ 2077 0be3 07       		.byte	0x7
+ 2078 0be4 6F       		.byte	0x6f
+ 2079 0be5 D7030000 		.4byte	0x3d7
+ 2080 0be9 01       		.byte	0x1
+ 2081 0bea 01       		.byte	0x1
+ 2082 0beb 22       		.uleb128 0x22
+ 2083 0bec A0000000 		.4byte	.LASF195
+ 2084 0bf0 0E       		.byte	0xe
+ 2085 0bf1 0706     		.2byte	0x607
+ 2086 0bf3 65040000 		.4byte	0x465
+ 2087 0bf7 01       		.byte	0x1
+ 2088 0bf8 01       		.byte	0x1
+ 2089 0bf9 23       		.uleb128 0x23
+ 2090 0bfa 01       		.byte	0x1
+ 2091 0bfb 18060000 		.4byte	.LASF196
+ 2092 0bff 0C       		.byte	0xc
+ 2093 0c00 81       		.byte	0x81
+ 2094 0c01 01       		.byte	0x1
+ 2095 0c02 01       		.byte	0x1
+ 2096 0c03 120C0000 		.4byte	0xc12
+ 2097 0c07 24       		.uleb128 0x24
+ 2098 0c08 120C0000 		.4byte	0xc12
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 38
+
+
+ 2099 0c0c 24       		.uleb128 0x24
+ 2100 0c0d 9B000000 		.4byte	0x9b
+ 2101 0c11 00       		.byte	0
+ 2102 0c12 05       		.uleb128 0x5
+ 2103 0c13 04       		.byte	0x4
+ 2104 0c14 93060000 		.4byte	0x693
+ 2105 0c18 23       		.uleb128 0x23
+ 2106 0c19 01       		.byte	0x1
+ 2107 0c1a D0080000 		.4byte	.LASF197
+ 2108 0c1e 0C       		.byte	0xc
+ 2109 0c1f 82       		.byte	0x82
+ 2110 0c20 01       		.byte	0x1
+ 2111 0c21 01       		.byte	0x1
+ 2112 0c22 310C0000 		.4byte	0xc31
+ 2113 0c26 24       		.uleb128 0x24
+ 2114 0c27 310C0000 		.4byte	0xc31
+ 2115 0c2b 24       		.uleb128 0x24
+ 2116 0c2c 9B000000 		.4byte	0x9b
+ 2117 0c30 00       		.byte	0
+ 2118 0c31 05       		.uleb128 0x5
+ 2119 0c32 04       		.byte	0x4
+ 2120 0c33 F1060000 		.4byte	0x6f1
+ 2121 0c37 23       		.uleb128 0x23
+ 2122 0c38 01       		.byte	0x1
+ 2123 0c39 E4030000 		.4byte	.LASF198
+ 2124 0c3d 0F       		.byte	0xf
+ 2125 0c3e 9E       		.byte	0x9e
+ 2126 0c3f 01       		.byte	0x1
+ 2127 0c40 01       		.byte	0x1
+ 2128 0c41 4B0C0000 		.4byte	0xc4b
+ 2129 0c45 24       		.uleb128 0x24
+ 2130 0c46 78000000 		.4byte	0x78
+ 2131 0c4a 00       		.byte	0
+ 2132 0c4b 23       		.uleb128 0x23
+ 2133 0c4c 01       		.byte	0x1
+ 2134 0c4d 0F060000 		.4byte	.LASF199
+ 2135 0c51 0F       		.byte	0xf
+ 2136 0c52 A5       		.byte	0xa5
+ 2137 0c53 01       		.byte	0x1
+ 2138 0c54 01       		.byte	0x1
+ 2139 0c55 5F0C0000 		.4byte	0xc5f
+ 2140 0c59 24       		.uleb128 0x24
+ 2141 0c5a B1000000 		.4byte	0xb1
+ 2142 0c5e 00       		.byte	0
+ 2143 0c5f 25       		.uleb128 0x25
+ 2144 0c60 01       		.byte	0x1
+ 2145 0c61 62040000 		.4byte	.LASF206
+ 2146 0c65 0D       		.byte	0xd
+ 2147 0c66 67       		.byte	0x67
+ 2148 0c67 01       		.byte	0x1
+ 2149 0c68 9B000000 		.4byte	0x9b
+ 2150 0c6c 01       		.byte	0x1
+ 2151 0c6d 770C0000 		.4byte	0xc77
+ 2152 0c71 24       		.uleb128 0x24
+ 2153 0c72 3D080000 		.4byte	0x83d
+ 2154 0c76 00       		.byte	0
+ 2155 0c77 23       		.uleb128 0x23
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 39
+
+
+ 2156 0c78 01       		.byte	0x1
+ 2157 0c79 C1000000 		.4byte	.LASF200
+ 2158 0c7d 0A       		.byte	0xa
+ 2159 0c7e 92       		.byte	0x92
+ 2160 0c7f 01       		.byte	0x1
+ 2161 0c80 01       		.byte	0x1
+ 2162 0c81 900C0000 		.4byte	0xc90
+ 2163 0c85 24       		.uleb128 0x24
+ 2164 0c86 9B000000 		.4byte	0x9b
+ 2165 0c8a 24       		.uleb128 0x24
+ 2166 0c8b 9B000000 		.4byte	0x9b
+ 2167 0c8f 00       		.byte	0
+ 2168 0c90 26       		.uleb128 0x26
+ 2169 0c91 01       		.byte	0x1
+ 2170 0c92 65050000 		.4byte	.LASF207
+ 2171 0c96 09       		.byte	0x9
+ 2172 0c97 C1       		.byte	0xc1
+ 2173 0c98 01       		.byte	0x1
+ 2174 0c99 01       		.byte	0x1
+ 2175 0c9a 24       		.uleb128 0x24
+ 2176 0c9b C7040000 		.4byte	0x4c7
+ 2177 0c9f 24       		.uleb128 0x24
+ 2178 0ca0 E7040000 		.4byte	0x4e7
+ 2179 0ca4 00       		.byte	0
+ 2180 0ca5 00       		.byte	0
+ 2181              		.section	.debug_abbrev,"",%progbits
+ 2182              	.Ldebug_abbrev0:
+ 2183 0000 01       		.uleb128 0x1
+ 2184 0001 11       		.uleb128 0x11
+ 2185 0002 01       		.byte	0x1
+ 2186 0003 25       		.uleb128 0x25
+ 2187 0004 0E       		.uleb128 0xe
+ 2188 0005 13       		.uleb128 0x13
+ 2189 0006 0B       		.uleb128 0xb
+ 2190 0007 03       		.uleb128 0x3
+ 2191 0008 0E       		.uleb128 0xe
+ 2192 0009 1B       		.uleb128 0x1b
+ 2193 000a 0E       		.uleb128 0xe
+ 2194 000b 55       		.uleb128 0x55
+ 2195 000c 06       		.uleb128 0x6
+ 2196 000d 11       		.uleb128 0x11
+ 2197 000e 01       		.uleb128 0x1
+ 2198 000f 52       		.uleb128 0x52
+ 2199 0010 01       		.uleb128 0x1
+ 2200 0011 10       		.uleb128 0x10
+ 2201 0012 06       		.uleb128 0x6
+ 2202 0013 00       		.byte	0
+ 2203 0014 00       		.byte	0
+ 2204 0015 02       		.uleb128 0x2
+ 2205 0016 24       		.uleb128 0x24
+ 2206 0017 00       		.byte	0
+ 2207 0018 0B       		.uleb128 0xb
+ 2208 0019 0B       		.uleb128 0xb
+ 2209 001a 3E       		.uleb128 0x3e
+ 2210 001b 0B       		.uleb128 0xb
+ 2211 001c 03       		.uleb128 0x3
+ 2212 001d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 40
+
+
+ 2213 001e 00       		.byte	0
+ 2214 001f 00       		.byte	0
+ 2215 0020 03       		.uleb128 0x3
+ 2216 0021 24       		.uleb128 0x24
+ 2217 0022 00       		.byte	0
+ 2218 0023 0B       		.uleb128 0xb
+ 2219 0024 0B       		.uleb128 0xb
+ 2220 0025 3E       		.uleb128 0x3e
+ 2221 0026 0B       		.uleb128 0xb
+ 2222 0027 03       		.uleb128 0x3
+ 2223 0028 08       		.uleb128 0x8
+ 2224 0029 00       		.byte	0
+ 2225 002a 00       		.byte	0
+ 2226 002b 04       		.uleb128 0x4
+ 2227 002c 0F       		.uleb128 0xf
+ 2228 002d 00       		.byte	0
+ 2229 002e 0B       		.uleb128 0xb
+ 2230 002f 0B       		.uleb128 0xb
+ 2231 0030 00       		.byte	0
+ 2232 0031 00       		.byte	0
+ 2233 0032 05       		.uleb128 0x5
+ 2234 0033 0F       		.uleb128 0xf
+ 2235 0034 00       		.byte	0
+ 2236 0035 0B       		.uleb128 0xb
+ 2237 0036 0B       		.uleb128 0xb
+ 2238 0037 49       		.uleb128 0x49
+ 2239 0038 13       		.uleb128 0x13
+ 2240 0039 00       		.byte	0
+ 2241 003a 00       		.byte	0
+ 2242 003b 06       		.uleb128 0x6
+ 2243 003c 26       		.uleb128 0x26
+ 2244 003d 00       		.byte	0
+ 2245 003e 49       		.uleb128 0x49
+ 2246 003f 13       		.uleb128 0x13
+ 2247 0040 00       		.byte	0
+ 2248 0041 00       		.byte	0
+ 2249 0042 07       		.uleb128 0x7
+ 2250 0043 16       		.uleb128 0x16
+ 2251 0044 00       		.byte	0
+ 2252 0045 03       		.uleb128 0x3
+ 2253 0046 0E       		.uleb128 0xe
+ 2254 0047 3A       		.uleb128 0x3a
+ 2255 0048 0B       		.uleb128 0xb
+ 2256 0049 3B       		.uleb128 0x3b
+ 2257 004a 0B       		.uleb128 0xb
+ 2258 004b 49       		.uleb128 0x49
+ 2259 004c 13       		.uleb128 0x13
+ 2260 004d 00       		.byte	0
+ 2261 004e 00       		.byte	0
+ 2262 004f 08       		.uleb128 0x8
+ 2263 0050 13       		.uleb128 0x13
+ 2264 0051 01       		.byte	0x1
+ 2265 0052 03       		.uleb128 0x3
+ 2266 0053 0E       		.uleb128 0xe
+ 2267 0054 0B       		.uleb128 0xb
+ 2268 0055 0B       		.uleb128 0xb
+ 2269 0056 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 41
+
+
+ 2270 0057 0B       		.uleb128 0xb
+ 2271 0058 3B       		.uleb128 0x3b
+ 2272 0059 0B       		.uleb128 0xb
+ 2273 005a 01       		.uleb128 0x1
+ 2274 005b 13       		.uleb128 0x13
+ 2275 005c 00       		.byte	0
+ 2276 005d 00       		.byte	0
+ 2277 005e 09       		.uleb128 0x9
+ 2278 005f 0D       		.uleb128 0xd
+ 2279 0060 00       		.byte	0
+ 2280 0061 03       		.uleb128 0x3
+ 2281 0062 0E       		.uleb128 0xe
+ 2282 0063 3A       		.uleb128 0x3a
+ 2283 0064 0B       		.uleb128 0xb
+ 2284 0065 3B       		.uleb128 0x3b
+ 2285 0066 0B       		.uleb128 0xb
+ 2286 0067 49       		.uleb128 0x49
+ 2287 0068 13       		.uleb128 0x13
+ 2288 0069 38       		.uleb128 0x38
+ 2289 006a 0A       		.uleb128 0xa
+ 2290 006b 00       		.byte	0
+ 2291 006c 00       		.byte	0
+ 2292 006d 0A       		.uleb128 0xa
+ 2293 006e 0D       		.uleb128 0xd
+ 2294 006f 00       		.byte	0
+ 2295 0070 03       		.uleb128 0x3
+ 2296 0071 08       		.uleb128 0x8
+ 2297 0072 3A       		.uleb128 0x3a
+ 2298 0073 0B       		.uleb128 0xb
+ 2299 0074 3B       		.uleb128 0x3b
+ 2300 0075 0B       		.uleb128 0xb
+ 2301 0076 49       		.uleb128 0x49
+ 2302 0077 13       		.uleb128 0x13
+ 2303 0078 38       		.uleb128 0x38
+ 2304 0079 0A       		.uleb128 0xa
+ 2305 007a 00       		.byte	0
+ 2306 007b 00       		.byte	0
+ 2307 007c 0B       		.uleb128 0xb
+ 2308 007d 13       		.uleb128 0x13
+ 2309 007e 01       		.byte	0x1
+ 2310 007f 0B       		.uleb128 0xb
+ 2311 0080 0B       		.uleb128 0xb
+ 2312 0081 3A       		.uleb128 0x3a
+ 2313 0082 0B       		.uleb128 0xb
+ 2314 0083 3B       		.uleb128 0x3b
+ 2315 0084 0B       		.uleb128 0xb
+ 2316 0085 01       		.uleb128 0x1
+ 2317 0086 13       		.uleb128 0x13
+ 2318 0087 00       		.byte	0
+ 2319 0088 00       		.byte	0
+ 2320 0089 0C       		.uleb128 0xc
+ 2321 008a 13       		.uleb128 0x13
+ 2322 008b 01       		.byte	0x1
+ 2323 008c 03       		.uleb128 0x3
+ 2324 008d 0E       		.uleb128 0xe
+ 2325 008e 0B       		.uleb128 0xb
+ 2326 008f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 42
+
+
+ 2327 0090 3A       		.uleb128 0x3a
+ 2328 0091 0B       		.uleb128 0xb
+ 2329 0092 3B       		.uleb128 0x3b
+ 2330 0093 05       		.uleb128 0x5
+ 2331 0094 01       		.uleb128 0x1
+ 2332 0095 13       		.uleb128 0x13
+ 2333 0096 00       		.byte	0
+ 2334 0097 00       		.byte	0
+ 2335 0098 0D       		.uleb128 0xd
+ 2336 0099 0D       		.uleb128 0xd
+ 2337 009a 00       		.byte	0
+ 2338 009b 03       		.uleb128 0x3
+ 2339 009c 08       		.uleb128 0x8
+ 2340 009d 3A       		.uleb128 0x3a
+ 2341 009e 0B       		.uleb128 0xb
+ 2342 009f 3B       		.uleb128 0x3b
+ 2343 00a0 05       		.uleb128 0x5
+ 2344 00a1 49       		.uleb128 0x49
+ 2345 00a2 13       		.uleb128 0x13
+ 2346 00a3 38       		.uleb128 0x38
+ 2347 00a4 0A       		.uleb128 0xa
+ 2348 00a5 00       		.byte	0
+ 2349 00a6 00       		.byte	0
+ 2350 00a7 0E       		.uleb128 0xe
+ 2351 00a8 35       		.uleb128 0x35
+ 2352 00a9 00       		.byte	0
+ 2353 00aa 49       		.uleb128 0x49
+ 2354 00ab 13       		.uleb128 0x13
+ 2355 00ac 00       		.byte	0
+ 2356 00ad 00       		.byte	0
+ 2357 00ae 0F       		.uleb128 0xf
+ 2358 00af 17       		.uleb128 0x17
+ 2359 00b0 01       		.byte	0x1
+ 2360 00b1 0B       		.uleb128 0xb
+ 2361 00b2 0B       		.uleb128 0xb
+ 2362 00b3 3A       		.uleb128 0x3a
+ 2363 00b4 0B       		.uleb128 0xb
+ 2364 00b5 3B       		.uleb128 0x3b
+ 2365 00b6 0B       		.uleb128 0xb
+ 2366 00b7 01       		.uleb128 0x1
+ 2367 00b8 13       		.uleb128 0x13
+ 2368 00b9 00       		.byte	0
+ 2369 00ba 00       		.byte	0
+ 2370 00bb 10       		.uleb128 0x10
+ 2371 00bc 0D       		.uleb128 0xd
+ 2372 00bd 00       		.byte	0
+ 2373 00be 03       		.uleb128 0x3
+ 2374 00bf 0E       		.uleb128 0xe
+ 2375 00c0 3A       		.uleb128 0x3a
+ 2376 00c1 0B       		.uleb128 0xb
+ 2377 00c2 3B       		.uleb128 0x3b
+ 2378 00c3 0B       		.uleb128 0xb
+ 2379 00c4 49       		.uleb128 0x49
+ 2380 00c5 13       		.uleb128 0x13
+ 2381 00c6 00       		.byte	0
+ 2382 00c7 00       		.byte	0
+ 2383 00c8 11       		.uleb128 0x11
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 43
+
+
+ 2384 00c9 04       		.uleb128 0x4
+ 2385 00ca 01       		.byte	0x1
+ 2386 00cb 0B       		.uleb128 0xb
+ 2387 00cc 0B       		.uleb128 0xb
+ 2388 00cd 3A       		.uleb128 0x3a
+ 2389 00ce 0B       		.uleb128 0xb
+ 2390 00cf 3B       		.uleb128 0x3b
+ 2391 00d0 0B       		.uleb128 0xb
+ 2392 00d1 01       		.uleb128 0x1
+ 2393 00d2 13       		.uleb128 0x13
+ 2394 00d3 00       		.byte	0
+ 2395 00d4 00       		.byte	0
+ 2396 00d5 12       		.uleb128 0x12
+ 2397 00d6 28       		.uleb128 0x28
+ 2398 00d7 00       		.byte	0
+ 2399 00d8 03       		.uleb128 0x3
+ 2400 00d9 0E       		.uleb128 0xe
+ 2401 00da 1C       		.uleb128 0x1c
+ 2402 00db 0D       		.uleb128 0xd
+ 2403 00dc 00       		.byte	0
+ 2404 00dd 00       		.byte	0
+ 2405 00de 13       		.uleb128 0x13
+ 2406 00df 28       		.uleb128 0x28
+ 2407 00e0 00       		.byte	0
+ 2408 00e1 03       		.uleb128 0x3
+ 2409 00e2 08       		.uleb128 0x8
+ 2410 00e3 1C       		.uleb128 0x1c
+ 2411 00e4 0D       		.uleb128 0xd
+ 2412 00e5 00       		.byte	0
+ 2413 00e6 00       		.byte	0
+ 2414 00e7 14       		.uleb128 0x14
+ 2415 00e8 2E       		.uleb128 0x2e
+ 2416 00e9 01       		.byte	0x1
+ 2417 00ea 3F       		.uleb128 0x3f
+ 2418 00eb 0C       		.uleb128 0xc
+ 2419 00ec 03       		.uleb128 0x3
+ 2420 00ed 0E       		.uleb128 0xe
+ 2421 00ee 3A       		.uleb128 0x3a
+ 2422 00ef 0B       		.uleb128 0xb
+ 2423 00f0 3B       		.uleb128 0x3b
+ 2424 00f1 0B       		.uleb128 0xb
+ 2425 00f2 27       		.uleb128 0x27
+ 2426 00f3 0C       		.uleb128 0xc
+ 2427 00f4 11       		.uleb128 0x11
+ 2428 00f5 01       		.uleb128 0x1
+ 2429 00f6 12       		.uleb128 0x12
+ 2430 00f7 01       		.uleb128 0x1
+ 2431 00f8 40       		.uleb128 0x40
+ 2432 00f9 06       		.uleb128 0x6
+ 2433 00fa 9742     		.uleb128 0x2117
+ 2434 00fc 0C       		.uleb128 0xc
+ 2435 00fd 01       		.uleb128 0x1
+ 2436 00fe 13       		.uleb128 0x13
+ 2437 00ff 00       		.byte	0
+ 2438 0100 00       		.byte	0
+ 2439 0101 15       		.uleb128 0x15
+ 2440 0102 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 44
+
+
+ 2441 0105 01       		.byte	0x1
+ 2442 0106 11       		.uleb128 0x11
+ 2443 0107 01       		.uleb128 0x1
+ 2444 0108 31       		.uleb128 0x31
+ 2445 0109 13       		.uleb128 0x13
+ 2446 010a 01       		.uleb128 0x1
+ 2447 010b 13       		.uleb128 0x13
+ 2448 010c 00       		.byte	0
+ 2449 010d 00       		.byte	0
+ 2450 010e 16       		.uleb128 0x16
+ 2451 010f 8A8201   		.uleb128 0x410a
+ 2452 0112 00       		.byte	0
+ 2453 0113 02       		.uleb128 0x2
+ 2454 0114 0A       		.uleb128 0xa
+ 2455 0115 9142     		.uleb128 0x2111
+ 2456 0117 0A       		.uleb128 0xa
+ 2457 0118 00       		.byte	0
+ 2458 0119 00       		.byte	0
+ 2459 011a 17       		.uleb128 0x17
+ 2460 011b 898201   		.uleb128 0x4109
+ 2461 011e 01       		.byte	0x1
+ 2462 011f 11       		.uleb128 0x11
+ 2463 0120 01       		.uleb128 0x1
+ 2464 0121 9542     		.uleb128 0x2115
+ 2465 0123 0C       		.uleb128 0xc
+ 2466 0124 31       		.uleb128 0x31
+ 2467 0125 13       		.uleb128 0x13
+ 2468 0126 00       		.byte	0
+ 2469 0127 00       		.byte	0
+ 2470 0128 18       		.uleb128 0x18
+ 2471 0129 2E       		.uleb128 0x2e
+ 2472 012a 00       		.byte	0
+ 2473 012b 3F       		.uleb128 0x3f
+ 2474 012c 0C       		.uleb128 0xc
+ 2475 012d 03       		.uleb128 0x3
+ 2476 012e 0E       		.uleb128 0xe
+ 2477 012f 3A       		.uleb128 0x3a
+ 2478 0130 0B       		.uleb128 0xb
+ 2479 0131 3B       		.uleb128 0x3b
+ 2480 0132 0B       		.uleb128 0xb
+ 2481 0133 27       		.uleb128 0x27
+ 2482 0134 0C       		.uleb128 0xc
+ 2483 0135 11       		.uleb128 0x11
+ 2484 0136 01       		.uleb128 0x1
+ 2485 0137 12       		.uleb128 0x12
+ 2486 0138 01       		.uleb128 0x1
+ 2487 0139 40       		.uleb128 0x40
+ 2488 013a 0A       		.uleb128 0xa
+ 2489 013b 9742     		.uleb128 0x2117
+ 2490 013d 0C       		.uleb128 0xc
+ 2491 013e 00       		.byte	0
+ 2492 013f 00       		.byte	0
+ 2493 0140 19       		.uleb128 0x19
+ 2494 0141 2E       		.uleb128 0x2e
+ 2495 0142 01       		.byte	0x1
+ 2496 0143 3F       		.uleb128 0x3f
+ 2497 0144 0C       		.uleb128 0xc
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 45
+
+
+ 2498 0145 03       		.uleb128 0x3
+ 2499 0146 0E       		.uleb128 0xe
+ 2500 0147 3A       		.uleb128 0x3a
+ 2501 0148 0B       		.uleb128 0xb
+ 2502 0149 3B       		.uleb128 0x3b
+ 2503 014a 0B       		.uleb128 0xb
+ 2504 014b 27       		.uleb128 0x27
+ 2505 014c 0C       		.uleb128 0xc
+ 2506 014d 49       		.uleb128 0x49
+ 2507 014e 13       		.uleb128 0x13
+ 2508 014f 11       		.uleb128 0x11
+ 2509 0150 01       		.uleb128 0x1
+ 2510 0151 12       		.uleb128 0x12
+ 2511 0152 01       		.uleb128 0x1
+ 2512 0153 40       		.uleb128 0x40
+ 2513 0154 06       		.uleb128 0x6
+ 2514 0155 9742     		.uleb128 0x2117
+ 2515 0157 0C       		.uleb128 0xc
+ 2516 0158 01       		.uleb128 0x1
+ 2517 0159 13       		.uleb128 0x13
+ 2518 015a 00       		.byte	0
+ 2519 015b 00       		.byte	0
+ 2520 015c 1A       		.uleb128 0x1a
+ 2521 015d 05       		.uleb128 0x5
+ 2522 015e 00       		.byte	0
+ 2523 015f 03       		.uleb128 0x3
+ 2524 0160 08       		.uleb128 0x8
+ 2525 0161 3A       		.uleb128 0x3a
+ 2526 0162 0B       		.uleb128 0xb
+ 2527 0163 3B       		.uleb128 0x3b
+ 2528 0164 0B       		.uleb128 0xb
+ 2529 0165 49       		.uleb128 0x49
+ 2530 0166 13       		.uleb128 0x13
+ 2531 0167 02       		.uleb128 0x2
+ 2532 0168 06       		.uleb128 0x6
+ 2533 0169 00       		.byte	0
+ 2534 016a 00       		.byte	0
+ 2535 016b 1B       		.uleb128 0x1b
+ 2536 016c 898201   		.uleb128 0x4109
+ 2537 016f 01       		.byte	0x1
+ 2538 0170 11       		.uleb128 0x11
+ 2539 0171 01       		.uleb128 0x1
+ 2540 0172 31       		.uleb128 0x31
+ 2541 0173 13       		.uleb128 0x13
+ 2542 0174 00       		.byte	0
+ 2543 0175 00       		.byte	0
+ 2544 0176 1C       		.uleb128 0x1c
+ 2545 0177 0B       		.uleb128 0xb
+ 2546 0178 01       		.byte	0x1
+ 2547 0179 55       		.uleb128 0x55
+ 2548 017a 06       		.uleb128 0x6
+ 2549 017b 01       		.uleb128 0x1
+ 2550 017c 13       		.uleb128 0x13
+ 2551 017d 00       		.byte	0
+ 2552 017e 00       		.byte	0
+ 2553 017f 1D       		.uleb128 0x1d
+ 2554 0180 34       		.uleb128 0x34
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 46
+
+
+ 2555 0181 00       		.byte	0
+ 2556 0182 03       		.uleb128 0x3
+ 2557 0183 0E       		.uleb128 0xe
+ 2558 0184 3A       		.uleb128 0x3a
+ 2559 0185 0B       		.uleb128 0xb
+ 2560 0186 3B       		.uleb128 0x3b
+ 2561 0187 0B       		.uleb128 0xb
+ 2562 0188 49       		.uleb128 0x49
+ 2563 0189 13       		.uleb128 0x13
+ 2564 018a 02       		.uleb128 0x2
+ 2565 018b 06       		.uleb128 0x6
+ 2566 018c 00       		.byte	0
+ 2567 018d 00       		.byte	0
+ 2568 018e 1E       		.uleb128 0x1e
+ 2569 018f 01       		.uleb128 0x1
+ 2570 0190 01       		.byte	0x1
+ 2571 0191 49       		.uleb128 0x49
+ 2572 0192 13       		.uleb128 0x13
+ 2573 0193 01       		.uleb128 0x1
+ 2574 0194 13       		.uleb128 0x13
+ 2575 0195 00       		.byte	0
+ 2576 0196 00       		.byte	0
+ 2577 0197 1F       		.uleb128 0x1f
+ 2578 0198 21       		.uleb128 0x21
+ 2579 0199 00       		.byte	0
+ 2580 019a 49       		.uleb128 0x49
+ 2581 019b 13       		.uleb128 0x13
+ 2582 019c 2F       		.uleb128 0x2f
+ 2583 019d 0B       		.uleb128 0xb
+ 2584 019e 00       		.byte	0
+ 2585 019f 00       		.byte	0
+ 2586 01a0 20       		.uleb128 0x20
+ 2587 01a1 34       		.uleb128 0x34
+ 2588 01a2 00       		.byte	0
+ 2589 01a3 03       		.uleb128 0x3
+ 2590 01a4 0E       		.uleb128 0xe
+ 2591 01a5 3A       		.uleb128 0x3a
+ 2592 01a6 0B       		.uleb128 0xb
+ 2593 01a7 3B       		.uleb128 0x3b
+ 2594 01a8 0B       		.uleb128 0xb
+ 2595 01a9 49       		.uleb128 0x49
+ 2596 01aa 13       		.uleb128 0x13
+ 2597 01ab 02       		.uleb128 0x2
+ 2598 01ac 0A       		.uleb128 0xa
+ 2599 01ad 00       		.byte	0
+ 2600 01ae 00       		.byte	0
+ 2601 01af 21       		.uleb128 0x21
+ 2602 01b0 34       		.uleb128 0x34
+ 2603 01b1 00       		.byte	0
+ 2604 01b2 03       		.uleb128 0x3
+ 2605 01b3 0E       		.uleb128 0xe
+ 2606 01b4 3A       		.uleb128 0x3a
+ 2607 01b5 0B       		.uleb128 0xb
+ 2608 01b6 3B       		.uleb128 0x3b
+ 2609 01b7 0B       		.uleb128 0xb
+ 2610 01b8 49       		.uleb128 0x49
+ 2611 01b9 13       		.uleb128 0x13
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 47
+
+
+ 2612 01ba 3F       		.uleb128 0x3f
+ 2613 01bb 0C       		.uleb128 0xc
+ 2614 01bc 3C       		.uleb128 0x3c
+ 2615 01bd 0C       		.uleb128 0xc
+ 2616 01be 00       		.byte	0
+ 2617 01bf 00       		.byte	0
+ 2618 01c0 22       		.uleb128 0x22
+ 2619 01c1 34       		.uleb128 0x34
+ 2620 01c2 00       		.byte	0
+ 2621 01c3 03       		.uleb128 0x3
+ 2622 01c4 0E       		.uleb128 0xe
+ 2623 01c5 3A       		.uleb128 0x3a
+ 2624 01c6 0B       		.uleb128 0xb
+ 2625 01c7 3B       		.uleb128 0x3b
+ 2626 01c8 05       		.uleb128 0x5
+ 2627 01c9 49       		.uleb128 0x49
+ 2628 01ca 13       		.uleb128 0x13
+ 2629 01cb 3F       		.uleb128 0x3f
+ 2630 01cc 0C       		.uleb128 0xc
+ 2631 01cd 3C       		.uleb128 0x3c
+ 2632 01ce 0C       		.uleb128 0xc
+ 2633 01cf 00       		.byte	0
+ 2634 01d0 00       		.byte	0
+ 2635 01d1 23       		.uleb128 0x23
+ 2636 01d2 2E       		.uleb128 0x2e
+ 2637 01d3 01       		.byte	0x1
+ 2638 01d4 3F       		.uleb128 0x3f
+ 2639 01d5 0C       		.uleb128 0xc
+ 2640 01d6 03       		.uleb128 0x3
+ 2641 01d7 0E       		.uleb128 0xe
+ 2642 01d8 3A       		.uleb128 0x3a
+ 2643 01d9 0B       		.uleb128 0xb
+ 2644 01da 3B       		.uleb128 0x3b
+ 2645 01db 0B       		.uleb128 0xb
+ 2646 01dc 27       		.uleb128 0x27
+ 2647 01dd 0C       		.uleb128 0xc
+ 2648 01de 3C       		.uleb128 0x3c
+ 2649 01df 0C       		.uleb128 0xc
+ 2650 01e0 01       		.uleb128 0x1
+ 2651 01e1 13       		.uleb128 0x13
+ 2652 01e2 00       		.byte	0
+ 2653 01e3 00       		.byte	0
+ 2654 01e4 24       		.uleb128 0x24
+ 2655 01e5 05       		.uleb128 0x5
+ 2656 01e6 00       		.byte	0
+ 2657 01e7 49       		.uleb128 0x49
+ 2658 01e8 13       		.uleb128 0x13
+ 2659 01e9 00       		.byte	0
+ 2660 01ea 00       		.byte	0
+ 2661 01eb 25       		.uleb128 0x25
+ 2662 01ec 2E       		.uleb128 0x2e
+ 2663 01ed 01       		.byte	0x1
+ 2664 01ee 3F       		.uleb128 0x3f
+ 2665 01ef 0C       		.uleb128 0xc
+ 2666 01f0 03       		.uleb128 0x3
+ 2667 01f1 0E       		.uleb128 0xe
+ 2668 01f2 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 48
+
+
+ 2669 01f3 0B       		.uleb128 0xb
+ 2670 01f4 3B       		.uleb128 0x3b
+ 2671 01f5 0B       		.uleb128 0xb
+ 2672 01f6 27       		.uleb128 0x27
+ 2673 01f7 0C       		.uleb128 0xc
+ 2674 01f8 49       		.uleb128 0x49
+ 2675 01f9 13       		.uleb128 0x13
+ 2676 01fa 3C       		.uleb128 0x3c
+ 2677 01fb 0C       		.uleb128 0xc
+ 2678 01fc 01       		.uleb128 0x1
+ 2679 01fd 13       		.uleb128 0x13
+ 2680 01fe 00       		.byte	0
+ 2681 01ff 00       		.byte	0
+ 2682 0200 26       		.uleb128 0x26
+ 2683 0201 2E       		.uleb128 0x2e
+ 2684 0202 01       		.byte	0x1
+ 2685 0203 3F       		.uleb128 0x3f
+ 2686 0204 0C       		.uleb128 0xc
+ 2687 0205 03       		.uleb128 0x3
+ 2688 0206 0E       		.uleb128 0xe
+ 2689 0207 3A       		.uleb128 0x3a
+ 2690 0208 0B       		.uleb128 0xb
+ 2691 0209 3B       		.uleb128 0x3b
+ 2692 020a 0B       		.uleb128 0xb
+ 2693 020b 27       		.uleb128 0x27
+ 2694 020c 0C       		.uleb128 0xc
+ 2695 020d 3C       		.uleb128 0x3c
+ 2696 020e 0C       		.uleb128 0xc
+ 2697 020f 00       		.byte	0
+ 2698 0210 00       		.byte	0
+ 2699 0211 00       		.byte	0
+ 2700              		.section	.debug_loc,"",%progbits
+ 2701              	.Ldebug_loc0:
+ 2702              	.LLST0:
+ 2703 0000 00000000 		.4byte	.LFB63
+ 2704 0004 08000000 		.4byte	.LCFI0
+ 2705 0008 0200     		.2byte	0x2
+ 2706 000a 7D       		.byte	0x7d
+ 2707 000b 00       		.sleb128 0
+ 2708 000c 08000000 		.4byte	.LCFI0
+ 2709 0010 22000000 		.4byte	.LFE63
+ 2710 0014 0200     		.2byte	0x2
+ 2711 0016 7D       		.byte	0x7d
+ 2712 0017 08       		.sleb128 8
+ 2713 0018 00000000 		.4byte	0
+ 2714 001c 00000000 		.4byte	0
+ 2715              	.LLST1:
+ 2716 0020 00000000 		.4byte	.LFB65
+ 2717 0024 02000000 		.4byte	.LCFI1
+ 2718 0028 0200     		.2byte	0x2
+ 2719 002a 7D       		.byte	0x7d
+ 2720 002b 00       		.sleb128 0
+ 2721 002c 02000000 		.4byte	.LCFI1
+ 2722 0030 14000000 		.4byte	.LFE65
+ 2723 0034 0200     		.2byte	0x2
+ 2724 0036 7D       		.byte	0x7d
+ 2725 0037 08       		.sleb128 8
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 49
+
+
+ 2726 0038 00000000 		.4byte	0
+ 2727 003c 00000000 		.4byte	0
+ 2728              	.LLST2:
+ 2729 0040 00000000 		.4byte	.LVL2
+ 2730 0044 04000000 		.4byte	.LVL3
+ 2731 0048 0100     		.2byte	0x1
+ 2732 004a 50       		.byte	0x50
+ 2733 004b 04000000 		.4byte	.LVL3
+ 2734 004f 14000000 		.4byte	.LFE65
+ 2735 0053 0400     		.2byte	0x4
+ 2736 0055 F3       		.byte	0xf3
+ 2737 0056 01       		.uleb128 0x1
+ 2738 0057 50       		.byte	0x50
+ 2739 0058 9F       		.byte	0x9f
+ 2740 0059 00000000 		.4byte	0
+ 2741 005d 00000000 		.4byte	0
+ 2742              	.LLST3:
+ 2743 0061 00000000 		.4byte	.LFB66
+ 2744 0065 04000000 		.4byte	.LCFI2
+ 2745 0069 0200     		.2byte	0x2
+ 2746 006b 7D       		.byte	0x7d
+ 2747 006c 00       		.sleb128 0
+ 2748 006d 04000000 		.4byte	.LCFI2
+ 2749 0071 7C010000 		.4byte	.LFE66
+ 2750 0075 0200     		.2byte	0x2
+ 2751 0077 7D       		.byte	0x7d
+ 2752 0078 20       		.sleb128 32
+ 2753 0079 00000000 		.4byte	0
+ 2754 007d 00000000 		.4byte	0
+ 2755              	.LLST4:
+ 2756 0081 00000000 		.4byte	.LVL6
+ 2757 0085 0A000000 		.4byte	.LVL7
+ 2758 0089 0100     		.2byte	0x1
+ 2759 008b 50       		.byte	0x50
+ 2760 008c 0A000000 		.4byte	.LVL7
+ 2761 0090 7C010000 		.4byte	.LFE66
+ 2762 0094 0400     		.2byte	0x4
+ 2763 0096 F3       		.byte	0xf3
+ 2764 0097 01       		.uleb128 0x1
+ 2765 0098 50       		.byte	0x50
+ 2766 0099 9F       		.byte	0x9f
+ 2767 009a 00000000 		.4byte	0
+ 2768 009e 00000000 		.4byte	0
+ 2769              	.LLST5:
+ 2770 00a2 16010000 		.4byte	.LVL31
+ 2771 00a6 18010000 		.4byte	.LVL32
+ 2772 00aa 0700     		.2byte	0x7
+ 2773 00ac 70       		.byte	0x70
+ 2774 00ad 00       		.sleb128 0
+ 2775 00ae 40       		.byte	0x40
+ 2776 00af 24       		.byte	0x24
+ 2777 00b0 40       		.byte	0x40
+ 2778 00b1 26       		.byte	0x26
+ 2779 00b2 9F       		.byte	0x9f
+ 2780 00b3 18010000 		.4byte	.LVL32
+ 2781 00b7 28010000 		.4byte	.LVL38
+ 2782 00bb 0700     		.2byte	0x7
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 50
+
+
+ 2783 00bd 75       		.byte	0x75
+ 2784 00be 00       		.sleb128 0
+ 2785 00bf 40       		.byte	0x40
+ 2786 00c0 24       		.byte	0x24
+ 2787 00c1 40       		.byte	0x40
+ 2788 00c2 26       		.byte	0x26
+ 2789 00c3 9F       		.byte	0x9f
+ 2790 00c4 00000000 		.4byte	0
+ 2791 00c8 00000000 		.4byte	0
+ 2792              	.LLST6:
+ 2793 00cc 1E010000 		.4byte	.LVL34
+ 2794 00d0 20010000 		.4byte	.LVL35
+ 2795 00d4 0700     		.2byte	0x7
+ 2796 00d6 70       		.byte	0x70
+ 2797 00d7 00       		.sleb128 0
+ 2798 00d8 40       		.byte	0x40
+ 2799 00d9 24       		.byte	0x24
+ 2800 00da 40       		.byte	0x40
+ 2801 00db 26       		.byte	0x26
+ 2802 00dc 9F       		.byte	0x9f
+ 2803 00dd 20010000 		.4byte	.LVL35
+ 2804 00e1 26010000 		.4byte	.LVL37
+ 2805 00e5 0700     		.2byte	0x7
+ 2806 00e7 76       		.byte	0x76
+ 2807 00e8 00       		.sleb128 0
+ 2808 00e9 40       		.byte	0x40
+ 2809 00ea 24       		.byte	0x24
+ 2810 00eb 40       		.byte	0x40
+ 2811 00ec 26       		.byte	0x26
+ 2812 00ed 9F       		.byte	0x9f
+ 2813 00ee 00000000 		.4byte	0
+ 2814 00f2 00000000 		.4byte	0
+ 2815              	.LLST7:
+ 2816 00f6 24010000 		.4byte	.LVL36
+ 2817 00fa 32010000 		.4byte	.LVL39
+ 2818 00fe 0700     		.2byte	0x7
+ 2819 0100 70       		.byte	0x70
+ 2820 0101 00       		.sleb128 0
+ 2821 0102 40       		.byte	0x40
+ 2822 0103 24       		.byte	0x24
+ 2823 0104 40       		.byte	0x40
+ 2824 0105 26       		.byte	0x26
+ 2825 0106 9F       		.byte	0x9f
+ 2826 0107 32010000 		.4byte	.LVL39
+ 2827 010b 60010000 		.4byte	.LVL44
+ 2828 010f 0700     		.2byte	0x7
+ 2829 0111 74       		.byte	0x74
+ 2830 0112 00       		.sleb128 0
+ 2831 0113 40       		.byte	0x40
+ 2832 0114 24       		.byte	0x24
+ 2833 0115 40       		.byte	0x40
+ 2834 0116 26       		.byte	0x26
+ 2835 0117 9F       		.byte	0x9f
+ 2836 0118 00000000 		.4byte	0
+ 2837 011c 00000000 		.4byte	0
+ 2838              		.section	.debug_aranges,"",%progbits
+ 2839 0000 34000000 		.4byte	0x34
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 51
+
+
+ 2840 0004 0200     		.2byte	0x2
+ 2841 0006 00000000 		.4byte	.Ldebug_info0
+ 2842 000a 04       		.byte	0x4
+ 2843 000b 00       		.byte	0
+ 2844 000c 0000     		.2byte	0
+ 2845 000e 0000     		.2byte	0
+ 2846 0010 00000000 		.4byte	.LFB63
+ 2847 0014 22000000 		.4byte	.LFE63-.LFB63
+ 2848 0018 00000000 		.4byte	.LFB64
+ 2849 001c 02000000 		.4byte	.LFE64-.LFB64
+ 2850 0020 00000000 		.4byte	.LFB65
+ 2851 0024 14000000 		.4byte	.LFE65-.LFB65
+ 2852 0028 00000000 		.4byte	.LFB66
+ 2853 002c 7C010000 		.4byte	.LFE66-.LFB66
+ 2854 0030 00000000 		.4byte	0
+ 2855 0034 00000000 		.4byte	0
+ 2856              		.section	.debug_ranges,"",%progbits
+ 2857              	.Ldebug_ranges0:
+ 2858 0000 20000000 		.4byte	.LBB2
+ 2859 0004 00010000 		.4byte	.LBE2
+ 2860 0008 0E010000 		.4byte	.LBB3
+ 2861 000c 6C010000 		.4byte	.LBE3
+ 2862 0010 00000000 		.4byte	0
+ 2863 0014 00000000 		.4byte	0
+ 2864 0018 00000000 		.4byte	.LFB63
+ 2865 001c 22000000 		.4byte	.LFE63
+ 2866 0020 00000000 		.4byte	.LFB64
+ 2867 0024 02000000 		.4byte	.LFE64
+ 2868 0028 00000000 		.4byte	.LFB65
+ 2869 002c 14000000 		.4byte	.LFE65
+ 2870 0030 00000000 		.4byte	.LFB66
+ 2871 0034 7C010000 		.4byte	.LFE66
+ 2872 0038 00000000 		.4byte	0
+ 2873 003c 00000000 		.4byte	0
+ 2874              		.section	.debug_line,"",%progbits
+ 2875              	.Ldebug_line0:
+ 2876 0000 1E020000 		.section	.debug_str,"MS",%progbits,1
+ 2876      0200A601 
+ 2876      00000201 
+ 2876      FB0E0D00 
+ 2876      01010101 
+ 2877              	.LASF166:
+ 2878 0000 42746E38 		.ascii	"Btn8DXmtr2\000"
+ 2878      44586D74 
+ 2878      723200
+ 2879              	.LASF93:
+ 2880 000b 6B566578 		.ascii	"kVexMotor_3\000"
+ 2880      4D6F746F 
+ 2880      725F3300 
+ 2881              	.LASF38:
+ 2882 0017 705F7469 		.ascii	"p_time\000"
+ 2882      6D6500
+ 2883              	.LASF204:
+ 2884 001e 76657855 		.ascii	"vexUserSetup\000"
+ 2884      73657253 
+ 2884      65747570 
+ 2884      00
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 52
+
+
+ 2885              	.LASF62:
+ 2886 002b 7264796D 		.ascii	"rdymsg\000"
+ 2886      736700
+ 2887              	.LASF164:
+ 2888 0032 43683358 		.ascii	"Ch3Xmtr2\000"
+ 2888      6D747232 
+ 2888      00
+ 2889              	.LASF85:
+ 2890 003b 6B566578 		.ascii	"kVexMotor269\000"
+ 2890      4D6F746F 
+ 2890      72323639 
+ 2890      00
+ 2891              	.LASF124:
+ 2892 0048 6B566578 		.ascii	"kVexConfigOutput\000"
+ 2892      436F6E66 
+ 2892      69674F75 
+ 2892      74707574 
+ 2892      00
+ 2893              	.LASF132:
+ 2894 0059 74797065 		.ascii	"type\000"
+ 2894      00
+ 2895              	.LASF114:
+ 2896 005e 6B566578 		.ascii	"kVexSensorDigitalInput\000"
+ 2896      53656E73 
+ 2896      6F724469 
+ 2896      67697461 
+ 2896      6C496E70 
+ 2897              	.LASF82:
+ 2898 0075 6B566578 		.ascii	"kVexDigitalOutput\000"
+ 2898      44696769 
+ 2898      74616C4F 
+ 2898      75747075 
+ 2898      7400
+ 2899              	.LASF162:
+ 2900 0087 43683158 		.ascii	"Ch1Xmtr2\000"
+ 2900      6D747232 
+ 2900      00
+ 2901              	.LASF79:
+ 2902 0090 6B566578 		.ascii	"kVexDigital_Num\000"
+ 2902      44696769 
+ 2902      74616C5F 
+ 2902      4E756D00 
+ 2903              	.LASF195:
+ 2904 00a0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2904      52784275 
+ 2904      66666572 
+ 2904      00
+ 2905              	.LASF129:
+ 2906 00ad 6B566578 		.ascii	"kVexConfigInterrupt\000"
+ 2906      436F6E66 
+ 2906      6967496E 
+ 2906      74657272 
+ 2906      75707400 
+ 2907              	.LASF200:
+ 2908 00c1 7665784D 		.ascii	"vexMotorSet\000"
+ 2908      6F746F72 
+ 2908      53657400 
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 53
+
+
+ 2909              	.LASF16:
+ 2910 00cd 626F6F6C 		.ascii	"bool_t\000"
+ 2910      5F7400
+ 2911              	.LASF29:
+ 2912 00d4 705F7072 		.ascii	"p_prio\000"
+ 2912      696F00
+ 2913              	.LASF12:
+ 2914 00db 696E7431 		.ascii	"int16_t\000"
+ 2914      365F7400 
+ 2915              	.LASF5:
+ 2916 00e3 6C6F6E67 		.ascii	"long long int\000"
+ 2916      206C6F6E 
+ 2916      6720696E 
+ 2916      7400
+ 2917              	.LASF1:
+ 2918 00f1 7369676E 		.ascii	"signed char\000"
+ 2918      65642063 
+ 2918      68617200 
+ 2919              	.LASF151:
+ 2920 00fd 42746E35 		.ascii	"Btn5U\000"
+ 2920      5500
+ 2921              	.LASF45:
+ 2922 0103 705F6D70 		.ascii	"p_mpool\000"
+ 2922      6F6F6C00 
+ 2923              	.LASF6:
+ 2924 010b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2924      206C6F6E 
+ 2924      6720756E 
+ 2924      7369676E 
+ 2924      65642069 
+ 2925              	.LASF59:
+ 2926 0122 6D5F7175 		.ascii	"m_queue\000"
+ 2926      65756500 
+ 2927              	.LASF165:
+ 2928 012a 43683458 		.ascii	"Ch4Xmtr2\000"
+ 2928      6D747232 
+ 2928      00
+ 2929              	.LASF21:
+ 2930 0133 74736C69 		.ascii	"tslices_t\000"
+ 2930      6365735F 
+ 2930      7400
+ 2931              	.LASF7:
+ 2932 013d 6C6F6E67 		.ascii	"long int\000"
+ 2932      20696E74 
+ 2932      00
+ 2933              	.LASF191:
+ 2934 0146 43315258 		.ascii	"C1RX\000"
+ 2934      00
+ 2935              	.LASF139:
+ 2936 014b 73747970 		.ascii	"stype\000"
+ 2936      6500
+ 2937              	.LASF19:
+ 2938 0151 74737461 		.ascii	"tstate_t\000"
+ 2938      74655F74 
+ 2938      00
+ 2939              	.LASF169:
+ 2940 015a 42746E38 		.ascii	"Btn8RXmtr2\000"
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 54
+
+
+ 2940      52586D74 
+ 2940      723200
+ 2941              	.LASF88:
+ 2942 0165 6B566578 		.ascii	"kVexMotor393R\000"
+ 2942      4D6F746F 
+ 2942      72333933 
+ 2942      5200
+ 2943              	.LASF203:
+ 2944 0173 433A5C70 		.ascii	"C:\\projects\\KBot5.0\000"
+ 2944      726F6A65 
+ 2944      6374735C 
+ 2944      4B426F74 
+ 2944      352E3000 
+ 2945              	.LASF13:
+ 2946 0187 75696E74 		.ascii	"uint16_t\000"
+ 2946      31365F74 
+ 2946      00
+ 2947              	.LASF83:
+ 2948 0190 74566578 		.ascii	"tVexDigitalMode\000"
+ 2948      44696769 
+ 2948      74616C4D 
+ 2948      6F646500 
+ 2949              	.LASF100:
+ 2950 01a0 6B566578 		.ascii	"kVexMotor_10\000"
+ 2950      4D6F746F 
+ 2950      725F3130 
+ 2950      00
+ 2951              	.LASF31:
+ 2952 01ad 705F6E65 		.ascii	"p_newer\000"
+ 2952      77657200 
+ 2953              	.LASF137:
+ 2954 01b5 6D747970 		.ascii	"mtype\000"
+ 2954      6500
+ 2955              	.LASF63:
+ 2956 01bb 65786974 		.ascii	"exitcode\000"
+ 2956      636F6465 
+ 2956      00
+ 2957              	.LASF161:
+ 2958 01c4 42746E41 		.ascii	"BtnAny\000"
+ 2958      6E7900
+ 2959              	.LASF54:
+ 2960 01cb 725F6E65 		.ascii	"r_newer\000"
+ 2960      77657200 
+ 2961              	.LASF168:
+ 2962 01d3 42746E38 		.ascii	"Btn8UXmtr2\000"
+ 2962      55586D74 
+ 2962      723200
+ 2963              	.LASF48:
+ 2964 01de 72656761 		.ascii	"regarm_t\000"
+ 2964      726D5F74 
+ 2964      00
+ 2965              	.LASF113:
+ 2966 01e7 6B566578 		.ascii	"kVexSensorNone\000"
+ 2966      53656E73 
+ 2966      6F724E6F 
+ 2966      6E6500
+ 2967              	.LASF205:
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 55
+
+
+ 2968 01f6 76657855 		.ascii	"vexUserInit\000"
+ 2968      73657249 
+ 2968      6E697400 
+ 2969              	.LASF111:
+ 2970 0202 6B496D65 		.ascii	"kImeTotal\000"
+ 2970      546F7461 
+ 2970      6C00
+ 2971              	.LASF26:
+ 2972 020c 54687265 		.ascii	"Thread\000"
+ 2972      616400
+ 2973              	.LASF148:
+ 2974 0213 42746E37 		.ascii	"Btn7U\000"
+ 2974      5500
+ 2975              	.LASF125:
+ 2976 0219 6B566578 		.ascii	"kVexConfigQuadEnc1\000"
+ 2976      436F6E66 
+ 2976      69675175 
+ 2976      6164456E 
+ 2976      633100
+ 2977              	.LASF126:
+ 2978 022c 6B566578 		.ascii	"kVexConfigQuadEnc2\000"
+ 2978      436F6E66 
+ 2978      69675175 
+ 2978      6164456E 
+ 2978      633200
+ 2979              	.LASF188:
+ 2980 023f 7665784F 		.ascii	"vexOperator\000"
+ 2980      70657261 
+ 2980      746F7200 
+ 2981              	.LASF202:
+ 2982 024b 76657875 		.ascii	"vexuser.c\000"
+ 2982      7365722E 
+ 2982      6300
+ 2983              	.LASF0:
+ 2984 0255 756E7369 		.ascii	"unsigned int\000"
+ 2984      676E6564 
+ 2984      20696E74 
+ 2984      00
+ 2985              	.LASF130:
+ 2986 0262 74566578 		.ascii	"tVexDigitalConfig\000"
+ 2986      44696769 
+ 2986      74616C43 
+ 2986      6F6E6669 
+ 2986      6700
+ 2987              	.LASF175:
+ 2988 0274 42746E35 		.ascii	"Btn5UXmtr2\000"
+ 2988      55586D74 
+ 2988      723200
+ 2989              	.LASF91:
+ 2990 027f 6B566578 		.ascii	"kVexMotor_1\000"
+ 2990      4D6F746F 
+ 2990      725F3100 
+ 2991              	.LASF92:
+ 2992 028b 6B566578 		.ascii	"kVexMotor_2\000"
+ 2992      4D6F746F 
+ 2992      725F3200 
+ 2993              	.LASF40:
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 56
+
+
+ 2994 0297 705F6D73 		.ascii	"p_msgqueue\000"
+ 2994      67717565 
+ 2994      756500
+ 2995              	.LASF94:
+ 2996 02a2 6B566578 		.ascii	"kVexMotor_4\000"
+ 2996      4D6F746F 
+ 2996      725F3400 
+ 2997              	.LASF95:
+ 2998 02ae 6B566578 		.ascii	"kVexMotor_5\000"
+ 2998      4D6F746F 
+ 2998      725F3500 
+ 2999              	.LASF96:
+ 3000 02ba 6B566578 		.ascii	"kVexMotor_6\000"
+ 3000      4D6F746F 
+ 3000      725F3600 
+ 3001              	.LASF97:
+ 3002 02c6 6B566578 		.ascii	"kVexMotor_7\000"
+ 3002      4D6F746F 
+ 3002      725F3700 
+ 3003              	.LASF98:
+ 3004 02d2 6B566578 		.ascii	"kVexMotor_8\000"
+ 3004      4D6F746F 
+ 3004      725F3800 
+ 3005              	.LASF99:
+ 3006 02de 6B566578 		.ascii	"kVexMotor_9\000"
+ 3006      4D6F746F 
+ 3006      725F3900 
+ 3007              	.LASF171:
+ 3008 02ea 42746E37 		.ascii	"Btn7LXmtr2\000"
+ 3008      4C586D74 
+ 3008      723200
+ 3009              	.LASF172:
+ 3010 02f5 42746E37 		.ascii	"Btn7UXmtr2\000"
+ 3010      55586D74 
+ 3010      723200
+ 3011              	.LASF150:
+ 3012 0300 42746E35 		.ascii	"Btn5D\000"
+ 3012      4400
+ 3013              	.LASF160:
+ 3014 0306 42746E38 		.ascii	"Btn8\000"
+ 3014      00
+ 3015              	.LASF4:
+ 3016 030b 73686F72 		.ascii	"short unsigned int\000"
+ 3016      7420756E 
+ 3016      7369676E 
+ 3016      65642069 
+ 3016      6E7400
+ 3017              	.LASF101:
+ 3018 031e 6B566578 		.ascii	"kVexMotorNum\000"
+ 3018      4D6F746F 
+ 3018      724E756D 
+ 3018      00
+ 3019              	.LASF122:
+ 3020 032b 74566578 		.ascii	"tVexSensorType\000"
+ 3020      53656E73 
+ 3020      6F725479 
+ 3020      706500
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 57
+
+
+ 3021              	.LASF189:
+ 3022 033a 43314C58 		.ascii	"C1LX\000"
+ 3022      00
+ 3023              	.LASF190:
+ 3024 033f 43314C59 		.ascii	"C1LY\000"
+ 3024      00
+ 3025              	.LASF67:
+ 3026 0344 6B566578 		.ascii	"kVexDigital_1\000"
+ 3026      44696769 
+ 3026      74616C5F 
+ 3026      3100
+ 3027              	.LASF68:
+ 3028 0352 6B566578 		.ascii	"kVexDigital_2\000"
+ 3028      44696769 
+ 3028      74616C5F 
+ 3028      3200
+ 3029              	.LASF69:
+ 3030 0360 6B566578 		.ascii	"kVexDigital_3\000"
+ 3030      44696769 
+ 3030      74616C5F 
+ 3030      3300
+ 3031              	.LASF70:
+ 3032 036e 6B566578 		.ascii	"kVexDigital_4\000"
+ 3032      44696769 
+ 3032      74616C5F 
+ 3032      3400
+ 3033              	.LASF71:
+ 3034 037c 6B566578 		.ascii	"kVexDigital_5\000"
+ 3034      44696769 
+ 3034      74616C5F 
+ 3034      3500
+ 3035              	.LASF72:
+ 3036 038a 6B566578 		.ascii	"kVexDigital_6\000"
+ 3036      44696769 
+ 3036      74616C5F 
+ 3036      3600
+ 3037              	.LASF73:
+ 3038 0398 6B566578 		.ascii	"kVexDigital_7\000"
+ 3038      44696769 
+ 3038      74616C5F 
+ 3038      3700
+ 3039              	.LASF115:
+ 3040 03a6 6B566578 		.ascii	"kVexSensorDigitalOutput\000"
+ 3040      53656E73 
+ 3040      6F724469 
+ 3040      67697461 
+ 3040      6C4F7574 
+ 3041              	.LASF75:
+ 3042 03be 6B566578 		.ascii	"kVexDigital_9\000"
+ 3042      44696769 
+ 3042      74616C5F 
+ 3042      3900
+ 3043              	.LASF47:
+ 3044 03cc 54687265 		.ascii	"ThreadsList\000"
+ 3044      6164734C 
+ 3044      69737400 
+ 3045              	.LASF24:
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 58
+
+
+ 3046 03d8 6576656E 		.ascii	"eventmask_t\000"
+ 3046      746D6173 
+ 3046      6B5F7400 
+ 3047              	.LASF198:
+ 3048 03e4 76657854 		.ascii	"vexTaskRegister\000"
+ 3048      61736B52 
+ 3048      65676973 
+ 3048      74657200 
+ 3049              	.LASF174:
+ 3050 03f4 42746E35 		.ascii	"Btn5DXmtr2\000"
+ 3050      44586D74 
+ 3050      723200
+ 3051              	.LASF102:
+ 3052 03ff 74566578 		.ascii	"tVexMotor\000"
+ 3052      4D6F746F 
+ 3052      7200
+ 3053              	.LASF170:
+ 3054 0409 42746E37 		.ascii	"Btn7DXmtr2\000"
+ 3054      44586D74 
+ 3054      723200
+ 3055              	.LASF128:
+ 3056 0414 6B566578 		.ascii	"kVexConfigSonarIn\000"
+ 3056      436F6E66 
+ 3056      6967536F 
+ 3056      6E617249 
+ 3056      6E00
+ 3057              	.LASF142:
+ 3058 0426 42746E38 		.ascii	"Btn8D\000"
+ 3058      4400
+ 3059              	.LASF8:
+ 3060 042c 73697A65 		.ascii	"sizetype\000"
+ 3060      74797065 
+ 3060      00
+ 3061              	.LASF136:
+ 3062 0435 706F7274 		.ascii	"port\000"
+ 3062      00
+ 3063              	.LASF138:
+ 3064 043a 72657665 		.ascii	"reversed\000"
+ 3064      72736564 
+ 3064      00
+ 3065              	.LASF180:
+ 3066 0443 4163636C 		.ascii	"AcclZXmtr2\000"
+ 3066      5A586D74 
+ 3066      723200
+ 3067              	.LASF58:
+ 3068 044e 4D757465 		.ascii	"Mutex\000"
+ 3068      7800
+ 3069              	.LASF153:
+ 3070 0454 42746E36 		.ascii	"Btn6U\000"
+ 3070      5500
+ 3071              	.LASF32:
+ 3072 045a 705F6F6C 		.ascii	"p_older\000"
+ 3072      64657200 
+ 3073              	.LASF206:
+ 3074 0462 76657843 		.ascii	"vexControllerGet\000"
+ 3074      6F6E7472 
+ 3074      6F6C6C65 
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 59
+
+
+ 3074      72476574 
+ 3074      00
+ 3075              	.LASF53:
+ 3076 0473 725F6374 		.ascii	"r_ctx\000"
+ 3076      7800
+ 3077              	.LASF46:
+ 3078 0479 54687265 		.ascii	"ThreadsQueue\000"
+ 3078      61647351 
+ 3078      75657565 
+ 3078      00
+ 3079              	.LASF141:
+ 3080 0486 7665784D 		.ascii	"vexMotorCfg\000"
+ 3080      6F746F72 
+ 3080      43666700 
+ 3081              	.LASF201:
+ 3082 0492 474E5520 		.ascii	"GNU C 4.7.2\000"
+ 3082      4320342E 
+ 3082      372E3200 
+ 3083              	.LASF56:
+ 3084 049e 725F6375 		.ascii	"r_current\000"
+ 3084      7272656E 
+ 3084      7400
+ 3085              	.LASF55:
+ 3086 04a8 725F6F6C 		.ascii	"r_older\000"
+ 3086      64657200 
+ 3087              	.LASF84:
+ 3088 04b0 6B566578 		.ascii	"kVexMotorUndefined\000"
+ 3088      4D6F746F 
+ 3088      72556E64 
+ 3088      6566696E 
+ 3088      656400
+ 3089              	.LASF66:
+ 3090 04c3 6B566578 		.ascii	"kVexDigital_None\000"
+ 3090      44696769 
+ 3090      74616C5F 
+ 3090      4E6F6E65 
+ 3090      00
+ 3091              	.LASF87:
+ 3092 04d4 6B566578 		.ascii	"kVexMotor393S\000"
+ 3092      4D6F746F 
+ 3092      72333933 
+ 3092      5300
+ 3093              	.LASF86:
+ 3094 04e2 6B566578 		.ascii	"kVexMotor393T\000"
+ 3094      4D6F746F 
+ 3094      72333933 
+ 3094      5400
+ 3095              	.LASF119:
+ 3096 04f0 6B566578 		.ascii	"kVexSensorIME\000"
+ 3096      53656E73 
+ 3096      6F72494D 
+ 3096      4500
+ 3097              	.LASF103:
+ 3098 04fe 6B496D65 		.ascii	"kImeChannel_1\000"
+ 3098      4368616E 
+ 3098      6E656C5F 
+ 3098      3100
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 60
+
+
+ 3099              	.LASF89:
+ 3100 050c 74566578 		.ascii	"tVexMotorType\000"
+ 3100      4D6F746F 
+ 3100      72547970 
+ 3100      6500
+ 3101              	.LASF20:
+ 3102 051a 74726566 		.ascii	"trefs_t\000"
+ 3102      735F7400 
+ 3103              	.LASF28:
+ 3104 0522 705F7072 		.ascii	"p_prev\000"
+ 3104      657600
+ 3105              	.LASF23:
+ 3106 0529 6D73675F 		.ascii	"msg_t\000"
+ 3106      7400
+ 3107              	.LASF22:
+ 3108 052f 74707269 		.ascii	"tprio_t\000"
+ 3108      6F5F7400 
+ 3109              	.LASF146:
+ 3110 0537 42746E37 		.ascii	"Btn7D\000"
+ 3110      4400
+ 3111              	.LASF17:
+ 3112 053d 5F426F6F 		.ascii	"_Bool\000"
+ 3112      6C00
+ 3113              	.LASF14:
+ 3114 0543 696E7433 		.ascii	"int32_t\000"
+ 3114      325F7400 
+ 3115              	.LASF2:
+ 3116 054b 756E7369 		.ascii	"unsigned char\000"
+ 3116      676E6564 
+ 3116      20636861 
+ 3116      7200
+ 3117              	.LASF41:
+ 3118 0559 705F6D73 		.ascii	"p_msg\000"
+ 3118      6700
+ 3119              	.LASF147:
+ 3120 055f 42746E37 		.ascii	"Btn7L\000"
+ 3120      4C00
+ 3121              	.LASF207:
+ 3122 0565 76657844 		.ascii	"vexDigitalModeSet\000"
+ 3122      69676974 
+ 3122      616C4D6F 
+ 3122      64655365 
+ 3122      7400
+ 3123              	.LASF181:
+ 3124 0577 42746E35 		.ascii	"Btn5Xmtr2\000"
+ 3124      586D7472 
+ 3124      3200
+ 3125              	.LASF43:
+ 3126 0581 705F6D74 		.ascii	"p_mtxlist\000"
+ 3126      786C6973 
+ 3126      7400
+ 3127              	.LASF3:
+ 3128 058b 73686F72 		.ascii	"short int\000"
+ 3128      7420696E 
+ 3128      7400
+ 3129              	.LASF34:
+ 3130 0595 705F7374 		.ascii	"p_state\000"
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 61
+
+
+ 3130      61746500 
+ 3131              	.LASF37:
+ 3132 059d 705F7072 		.ascii	"p_preempt\000"
+ 3132      65656D70 
+ 3132      7400
+ 3133              	.LASF127:
+ 3134 05a7 6B566578 		.ascii	"kVexConfigSonarOut\000"
+ 3134      436F6E66 
+ 3134      6967536F 
+ 3134      6E61724F 
+ 3134      757400
+ 3135              	.LASF52:
+ 3136 05ba 725F7072 		.ascii	"r_prio\000"
+ 3136      696F00
+ 3137              	.LASF65:
+ 3138 05c1 65776D61 		.ascii	"ewmask\000"
+ 3138      736B00
+ 3139              	.LASF27:
+ 3140 05c8 705F6E65 		.ascii	"p_next\000"
+ 3140      787400
+ 3141              	.LASF18:
+ 3142 05cf 746D6F64 		.ascii	"tmode_t\000"
+ 3142      655F7400 
+ 3143              	.LASF35:
+ 3144 05d7 705F666C 		.ascii	"p_flags\000"
+ 3144      61677300 
+ 3145              	.LASF131:
+ 3146 05df 5F766578 		.ascii	"_vexDigiCfg\000"
+ 3146      44696769 
+ 3146      43666700 
+ 3147              	.LASF140:
+ 3148 05eb 6368616E 		.ascii	"channel\000"
+ 3148      6E656C00 
+ 3149              	.LASF42:
+ 3150 05f3 705F6570 		.ascii	"p_epending\000"
+ 3150      656E6469 
+ 3150      6E6700
+ 3151              	.LASF15:
+ 3152 05fe 75696E74 		.ascii	"uint32_t\000"
+ 3152      33325F74 
+ 3152      00
+ 3153              	.LASF51:
+ 3154 0607 725F7175 		.ascii	"r_queue\000"
+ 3154      65756500 
+ 3155              	.LASF199:
+ 3156 060f 76657853 		.ascii	"vexSleep\000"
+ 3156      6C656570 
+ 3156      00
+ 3157              	.LASF196:
+ 3158 0618 76657844 		.ascii	"vexDigitalConfigure\000"
+ 3158      69676974 
+ 3158      616C436F 
+ 3158      6E666967 
+ 3158      75726500 
+ 3159              	.LASF133:
+ 3160 062c 6368616E 		.ascii	"chan\000"
+ 3160      00
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 62
+
+
+ 3161              	.LASF9:
+ 3162 0631 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3162      20756E73 
+ 3162      69676E65 
+ 3162      6420696E 
+ 3162      7400
+ 3163              	.LASF10:
+ 3164 0643 63686172 		.ascii	"char\000"
+ 3164      00
+ 3165              	.LASF104:
+ 3166 0648 6B496D65 		.ascii	"kImeChannel_2\000"
+ 3166      4368616E 
+ 3166      6E656C5F 
+ 3166      3200
+ 3167              	.LASF105:
+ 3168 0656 6B496D65 		.ascii	"kImeChannel_3\000"
+ 3168      4368616E 
+ 3168      6E656C5F 
+ 3168      3300
+ 3169              	.LASF106:
+ 3170 0664 6B496D65 		.ascii	"kImeChannel_4\000"
+ 3170      4368616E 
+ 3170      6E656C5F 
+ 3170      3400
+ 3171              	.LASF107:
+ 3172 0672 6B496D65 		.ascii	"kImeChannel_5\000"
+ 3172      4368616E 
+ 3172      6E656C5F 
+ 3172      3500
+ 3173              	.LASF108:
+ 3174 0680 6B496D65 		.ascii	"kImeChannel_6\000"
+ 3174      4368616E 
+ 3174      6E656C5F 
+ 3174      3600
+ 3175              	.LASF109:
+ 3176 068e 6B496D65 		.ascii	"kImeChannel_7\000"
+ 3176      4368616E 
+ 3176      6E656C5F 
+ 3176      3700
+ 3177              	.LASF110:
+ 3178 069c 6B496D65 		.ascii	"kImeChannel_8\000"
+ 3178      4368616E 
+ 3178      6E656C5F 
+ 3178      3800
+ 3179              	.LASF76:
+ 3180 06aa 6B566578 		.ascii	"kVexDigital_10\000"
+ 3180      44696769 
+ 3180      74616C5F 
+ 3180      313000
+ 3181              	.LASF77:
+ 3182 06b9 6B566578 		.ascii	"kVexDigital_11\000"
+ 3182      44696769 
+ 3182      74616C5F 
+ 3182      313100
+ 3183              	.LASF78:
+ 3184 06c8 6B566578 		.ascii	"kVexDigital_12\000"
+ 3184      44696769 
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 63
+
+
+ 3184      74616C5F 
+ 3184      313200
+ 3185              	.LASF182:
+ 3186 06d7 42746E36 		.ascii	"Btn6Xmtr2\000"
+ 3186      586D7472 
+ 3186      3200
+ 3187              	.LASF143:
+ 3188 06e1 42746E38 		.ascii	"Btn8L\000"
+ 3188      4C00
+ 3189              	.LASF193:
+ 3190 06e7 6D436F6E 		.ascii	"mConfig\000"
+ 3190      66696700 
+ 3191              	.LASF61:
+ 3192 06ef 6D5F6E65 		.ascii	"m_next\000"
+ 3192      787400
+ 3193              	.LASF25:
+ 3194 06f6 73797374 		.ascii	"systime_t\000"
+ 3194      696D655F 
+ 3194      7400
+ 3195              	.LASF44:
+ 3196 0700 705F7265 		.ascii	"p_realprio\000"
+ 3196      616C7072 
+ 3196      696F00
+ 3197              	.LASF145:
+ 3198 070b 42746E38 		.ascii	"Btn8R\000"
+ 3198      5200
+ 3199              	.LASF120:
+ 3200 0711 6B566578 		.ascii	"kVexSensorPotentiometer\000"
+ 3200      53656E73 
+ 3200      6F72506F 
+ 3200      74656E74 
+ 3200      696F6D65 
+ 3201              	.LASF144:
+ 3202 0729 42746E38 		.ascii	"Btn8U\000"
+ 3202      5500
+ 3203              	.LASF116:
+ 3204 072f 6B566578 		.ascii	"kVexSensorQuadEncoder\000"
+ 3204      53656E73 
+ 3204      6F725175 
+ 3204      6164456E 
+ 3204      636F6465 
+ 3205              	.LASF157:
+ 3206 0745 42746E35 		.ascii	"Btn5\000"
+ 3206      00
+ 3207              	.LASF158:
+ 3208 074a 42746E36 		.ascii	"Btn6\000"
+ 3208      00
+ 3209              	.LASF159:
+ 3210 074f 42746E37 		.ascii	"Btn7\000"
+ 3210      00
+ 3211              	.LASF50:
+ 3212 0754 636F6E74 		.ascii	"context\000"
+ 3212      65787400 
+ 3213              	.LASF134:
+ 3214 075c 76657844 		.ascii	"vexDigiCfg\000"
+ 3214      69676943 
+ 3214      666700
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 64
+
+
+ 3215              	.LASF117:
+ 3216 0767 6B566578 		.ascii	"kVexSensorSonarCm\000"
+ 3216      53656E73 
+ 3216      6F72536F 
+ 3216      6E617243 
+ 3216      6D00
+ 3217              	.LASF179:
+ 3218 0779 4163636C 		.ascii	"AcclYXmtr2\000"
+ 3218      59586D74 
+ 3218      723200
+ 3219              	.LASF49:
+ 3220 0784 696E7463 		.ascii	"intctx\000"
+ 3220      747800
+ 3221              	.LASF184:
+ 3222 078b 42746E38 		.ascii	"Btn8mXtr2\000"
+ 3222      6D587472 
+ 3222      3200
+ 3223              	.LASF186:
+ 3224 0795 7443746C 		.ascii	"tCtlIndex\000"
+ 3224      496E6465 
+ 3224      7800
+ 3225              	.LASF192:
+ 3226 079f 64436F6E 		.ascii	"dConfig\000"
+ 3226      66696700 
+ 3227              	.LASF177:
+ 3228 07a7 42746E36 		.ascii	"Btn6UXmtr2\000"
+ 3228      55586D74 
+ 3228      723200
+ 3229              	.LASF74:
+ 3230 07b2 6B566578 		.ascii	"kVexDigital_8\000"
+ 3230      44696769 
+ 3230      74616C5F 
+ 3230      3800
+ 3231              	.LASF121:
+ 3232 07c0 6B566578 		.ascii	"kVexSensorInterrupt\000"
+ 3232      53656E73 
+ 3232      6F72496E 
+ 3232      74657272 
+ 3232      75707400 
+ 3233              	.LASF36:
+ 3234 07d4 705F7265 		.ascii	"p_refs\000"
+ 3234      667300
+ 3235              	.LASF183:
+ 3236 07db 42746E37 		.ascii	"Btn7Xmtr2\000"
+ 3236      586D7472 
+ 3236      3200
+ 3237              	.LASF57:
+ 3238 07e5 52656164 		.ascii	"ReadyList\000"
+ 3238      794C6973 
+ 3238      7400
+ 3239              	.LASF167:
+ 3240 07ef 42746E38 		.ascii	"Btn8LXmtr2\000"
+ 3240      4C586D74 
+ 3240      723200
+ 3241              	.LASF154:
+ 3242 07fa 4163636C 		.ascii	"AcclX\000"
+ 3242      5800
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 65
+
+
+ 3243              	.LASF155:
+ 3244 0800 4163636C 		.ascii	"AcclY\000"
+ 3244      5900
+ 3245              	.LASF156:
+ 3246 0806 4163636C 		.ascii	"AcclZ\000"
+ 3246      5A00
+ 3247              	.LASF187:
+ 3248 080c 76657841 		.ascii	"vexAutonomous\000"
+ 3248      75746F6E 
+ 3248      6F6D6F75 
+ 3248      7300
+ 3249              	.LASF194:
+ 3250 081a 726C6973 		.ascii	"rlist\000"
+ 3250      7400
+ 3251              	.LASF112:
+ 3252 0820 6B496D65 		.ascii	"kImeChannelNone\000"
+ 3252      4368616E 
+ 3252      6E656C4E 
+ 3252      6F6E6500 
+ 3253              	.LASF11:
+ 3254 0830 75696E74 		.ascii	"uint8_t\000"
+ 3254      385F7400 
+ 3255              	.LASF185:
+ 3256 0838 42746E41 		.ascii	"BtnAnyXmtr2\000"
+ 3256      6E79586D 
+ 3256      74723200 
+ 3257              	.LASF90:
+ 3258 0844 6B566578 		.ascii	"kVexMotor_None\000"
+ 3258      4D6F746F 
+ 3258      725F4E6F 
+ 3258      6E6500
+ 3259              	.LASF123:
+ 3260 0853 6B566578 		.ascii	"kVexConfigInput\000"
+ 3260      436F6E66 
+ 3260      6967496E 
+ 3260      70757400 
+ 3261              	.LASF149:
+ 3262 0863 42746E37 		.ascii	"Btn7R\000"
+ 3262      5200
+ 3263              	.LASF64:
+ 3264 0869 77746F62 		.ascii	"wtobjp\000"
+ 3264      6A7000
+ 3265              	.LASF33:
+ 3266 0870 705F6E61 		.ascii	"p_name\000"
+ 3266      6D6500
+ 3267              	.LASF163:
+ 3268 0877 43683258 		.ascii	"Ch2Xmtr2\000"
+ 3268      6D747232 
+ 3268      00
+ 3269              	.LASF118:
+ 3270 0880 6B566578 		.ascii	"kVexSensorSonarInch\000"
+ 3270      53656E73 
+ 3270      6F72536F 
+ 3270      6E617249 
+ 3270      6E636800 
+ 3271              	.LASF178:
+ 3272 0894 4163636C 		.ascii	"AcclXXmtr2\000"
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 66
+
+
+ 3272      58586D74 
+ 3272      723200
+ 3273              	.LASF173:
+ 3274 089f 42746E37 		.ascii	"Btn7RXmtr2\000"
+ 3274      52586D74 
+ 3274      723200
+ 3275              	.LASF176:
+ 3276 08aa 42746E36 		.ascii	"Btn6DXmtr2\000"
+ 3276      44586D74 
+ 3276      723200
+ 3277              	.LASF135:
+ 3278 08b5 5F766578 		.ascii	"_vexMotorCfg\000"
+ 3278      4D6F746F 
+ 3278      72436667 
+ 3278      00
+ 3279              	.LASF152:
+ 3280 08c2 42746E36 		.ascii	"Btn6D\000"
+ 3280      4400
+ 3281              	.LASF60:
+ 3282 08c8 6D5F6F77 		.ascii	"m_owner\000"
+ 3282      6E657200 
+ 3283              	.LASF197:
+ 3284 08d0 7665784D 		.ascii	"vexMotorConfigure\000"
+ 3284      6F746F72 
+ 3284      436F6E66 
+ 3284      69677572 
+ 3284      6500
+ 3285              	.LASF30:
+ 3286 08e2 705F6374 		.ascii	"p_ctx\000"
+ 3286      7800
+ 3287              	.LASF39:
+ 3288 08e8 705F7761 		.ascii	"p_waiting\000"
+ 3288      6974696E 
+ 3288      6700
+ 3289              	.LASF81:
+ 3290 08f2 6B566578 		.ascii	"kVexDigitalInput\000"
+ 3290      44696769 
+ 3290      74616C49 
+ 3290      6E707574 
+ 3290      00
+ 3291              	.LASF80:
+ 3292 0903 74566578 		.ascii	"tVexDigitalPin\000"
+ 3292      44696769 
+ 3292      74616C50 
+ 3292      696E00
+ 3293              		.ident	"GCC: (GNU) 4.7.2"
+ARM GAS  C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s 			page 67
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 vexuser.c
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:19     .text.vexUserSetup:00000000 $t
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:25     .text.vexUserSetup:00000000 vexUserSetup
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:411    .data.dConfig:00000000 .LANCHOR0
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:355    .data.mConfig:00000000 .LANCHOR1
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:58     .text.vexUserInit:00000000 $t
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:64     .text.vexUserInit:00000000 vexUserInit
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:76     .text.vexAutonomous:00000000 $t
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:82     .text.vexAutonomous:00000000 vexAutonomous
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:110    .text.vexAutonomous:00000010 $d
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:115    .text.vexOperator:00000000 $t
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:121    .text.vexOperator:00000000 vexOperator
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:341    .text.vexOperator:00000174 $d
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:347    .rodata.str1.4:00000000 $d
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:354    .data.mConfig:00000000 $d
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:358    .data.mConfig:00000000 mConfig
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:410    .data.dConfig:00000000 $d
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:414    .data.dConfig:00000000 dConfig
+                     .debug_frame:00000010 $d
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:114    .text.vexAutonomous:00000014 $t
+C:\Users\KE'OND~1\AppData\Local\Temp\cc2z7Sdr.s:346    .text.vexOperator:0000017c $t
+
+UNDEFINED SYMBOLS
+vexDigitalConfigure
+vexMotorConfigure
+vexTaskRegister
+vexSleep
+vexControllerGet
+vexMotorSet
+vexDigitalModeSet
+rlist
